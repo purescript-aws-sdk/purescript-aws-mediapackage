@@ -20,62 +20,82 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "MediaPackage" :: String
-
 
 -- | Creates a new Channel.
 createChannel :: forall eff. CreateChannelRequest -> Aff (exception :: EXCEPTION | eff) CreateChannelResponse
-createChannel = Request.request serviceName "createChannel" 
+createChannel = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "createChannel"
 
 
 -- | Creates a new OriginEndpoint record.
 createOriginEndpoint :: forall eff. CreateOriginEndpointRequest -> Aff (exception :: EXCEPTION | eff) CreateOriginEndpointResponse
-createOriginEndpoint = Request.request serviceName "createOriginEndpoint" 
+createOriginEndpoint = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "createOriginEndpoint"
 
 
 -- | Deletes an existing Channel.
 deleteChannel :: forall eff. DeleteChannelRequest -> Aff (exception :: EXCEPTION | eff) DeleteChannelResponse
-deleteChannel = Request.request serviceName "deleteChannel" 
+deleteChannel = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "deleteChannel"
 
 
 -- | Deletes an existing OriginEndpoint.
 deleteOriginEndpoint :: forall eff. DeleteOriginEndpointRequest -> Aff (exception :: EXCEPTION | eff) DeleteOriginEndpointResponse
-deleteOriginEndpoint = Request.request serviceName "deleteOriginEndpoint" 
+deleteOriginEndpoint = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "deleteOriginEndpoint"
 
 
 -- | Gets details about a Channel.
 describeChannel :: forall eff. DescribeChannelRequest -> Aff (exception :: EXCEPTION | eff) DescribeChannelResponse
-describeChannel = Request.request serviceName "describeChannel" 
+describeChannel = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "describeChannel"
 
 
 -- | Gets details about an existing OriginEndpoint.
 describeOriginEndpoint :: forall eff. DescribeOriginEndpointRequest -> Aff (exception :: EXCEPTION | eff) DescribeOriginEndpointResponse
-describeOriginEndpoint = Request.request serviceName "describeOriginEndpoint" 
+describeOriginEndpoint = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "describeOriginEndpoint"
 
 
 -- | Returns a collection of Channels.
 listChannels :: forall eff. ListChannelsRequest -> Aff (exception :: EXCEPTION | eff) ListChannelsResponse
-listChannels = Request.request serviceName "listChannels" 
+listChannels = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "listChannels"
 
 
 -- | Returns a collection of OriginEndpoint records.
 listOriginEndpoints :: forall eff. ListOriginEndpointsRequest -> Aff (exception :: EXCEPTION | eff) ListOriginEndpointsResponse
-listOriginEndpoints = Request.request serviceName "listOriginEndpoints" 
+listOriginEndpoints = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "listOriginEndpoints"
 
 
 -- | Changes the Channel ingest username and password.
 rotateChannelCredentials :: forall eff. RotateChannelCredentialsRequest -> Aff (exception :: EXCEPTION | eff) RotateChannelCredentialsResponse
-rotateChannelCredentials = Request.request serviceName "rotateChannelCredentials" 
+rotateChannelCredentials = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "rotateChannelCredentials"
 
 
 -- | Updates an existing Channel.
 updateChannel :: forall eff. UpdateChannelRequest -> Aff (exception :: EXCEPTION | eff) UpdateChannelResponse
-updateChannel = Request.request serviceName "updateChannel" 
+updateChannel = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "updateChannel"
 
 
 -- | Updates an existing OriginEndpoint.
 updateOriginEndpoint :: forall eff. UpdateOriginEndpointRequest -> Aff (exception :: EXCEPTION | eff) UpdateOriginEndpointResponse
-updateOriginEndpoint = Request.request serviceName "updateOriginEndpoint" 
+updateOriginEndpoint = Request.request service method  where
+    service = Request.ServiceName "MediaPackage"
+    method = Request.MethodName "updateOriginEndpoint"
 
 
 newtype AdMarkers = AdMarkers String
