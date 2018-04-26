@@ -26,7 +26,7 @@ Encode AdMarkers
 
 ``` purescript
 newtype Channel
-  = Channel { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }
+  = Channel { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }
 ```
 
 A Channel resource configuration.
@@ -51,7 +51,7 @@ Constructs Channel from required parameters
 #### `newChannel'`
 
 ``` purescript
-newChannel' :: ({ "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }) -> Channel
+newChannel' :: ({ "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }) -> Channel
 ```
 
 Constructs Channel's fields from required parameters
@@ -60,7 +60,7 @@ Constructs Channel's fields from required parameters
 
 ``` purescript
 newtype ChannelCreateParameters
-  = ChannelCreateParameters { "Description" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String) }
+  = ChannelCreateParameters { "Description" :: Maybe (String), "Id" :: Maybe (String) }
 ```
 
 Configuration parameters for a new Channel.
@@ -85,7 +85,7 @@ Constructs ChannelCreateParameters from required parameters
 #### `newChannelCreateParameters'`
 
 ``` purescript
-newChannelCreateParameters' :: ({ "Description" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String) } -> { "Description" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String) }) -> ChannelCreateParameters
+newChannelCreateParameters' :: ({ "Description" :: Maybe (String), "Id" :: Maybe (String) } -> { "Description" :: Maybe (String), "Id" :: Maybe (String) }) -> ChannelCreateParameters
 ```
 
 Constructs ChannelCreateParameters's fields from required parameters
@@ -94,7 +94,7 @@ Constructs ChannelCreateParameters's fields from required parameters
 
 ``` purescript
 newtype ChannelList
-  = ChannelList { "Channels" :: NullOrUndefined (ListOfChannel), "NextToken" :: NullOrUndefined (String) }
+  = ChannelList { "Channels" :: Maybe (ListOfChannel), "NextToken" :: Maybe (String) }
 ```
 
 A collection of Channel records.
@@ -119,7 +119,7 @@ Constructs ChannelList from required parameters
 #### `newChannelList'`
 
 ``` purescript
-newChannelList' :: ({ "Channels" :: NullOrUndefined (ListOfChannel), "NextToken" :: NullOrUndefined (String) } -> { "Channels" :: NullOrUndefined (ListOfChannel), "NextToken" :: NullOrUndefined (String) }) -> ChannelList
+newChannelList' :: ({ "Channels" :: Maybe (ListOfChannel), "NextToken" :: Maybe (String) } -> { "Channels" :: Maybe (ListOfChannel), "NextToken" :: Maybe (String) }) -> ChannelList
 ```
 
 Constructs ChannelList's fields from required parameters
@@ -128,7 +128,7 @@ Constructs ChannelList's fields from required parameters
 
 ``` purescript
 newtype ChannelUpdateParameters
-  = ChannelUpdateParameters { "Description" :: NullOrUndefined (String) }
+  = ChannelUpdateParameters { "Description" :: Maybe (String) }
 ```
 
 Configuration parameters for updating an existing Channel.
@@ -153,7 +153,7 @@ Constructs ChannelUpdateParameters from required parameters
 #### `newChannelUpdateParameters'`
 
 ``` purescript
-newChannelUpdateParameters' :: ({ "Description" :: NullOrUndefined (String) } -> { "Description" :: NullOrUndefined (String) }) -> ChannelUpdateParameters
+newChannelUpdateParameters' :: ({ "Description" :: Maybe (String) } -> { "Description" :: Maybe (String) }) -> ChannelUpdateParameters
 ```
 
 Constructs ChannelUpdateParameters's fields from required parameters
@@ -162,7 +162,7 @@ Constructs ChannelUpdateParameters's fields from required parameters
 
 ``` purescript
 newtype CreateChannelRequest
-  = CreateChannelRequest { "Description" :: NullOrUndefined (String), "Id" :: String }
+  = CreateChannelRequest { "Description" :: Maybe (String), "Id" :: String }
 ```
 
 A new Channel configuration.
@@ -187,7 +187,7 @@ Constructs CreateChannelRequest from required parameters
 #### `newCreateChannelRequest'`
 
 ``` purescript
-newCreateChannelRequest' :: String -> ({ "Description" :: NullOrUndefined (String), "Id" :: String } -> { "Description" :: NullOrUndefined (String), "Id" :: String }) -> CreateChannelRequest
+newCreateChannelRequest' :: String -> ({ "Description" :: Maybe (String), "Id" :: String } -> { "Description" :: Maybe (String), "Id" :: String }) -> CreateChannelRequest
 ```
 
 Constructs CreateChannelRequest's fields from required parameters
@@ -196,7 +196,7 @@ Constructs CreateChannelRequest's fields from required parameters
 
 ``` purescript
 newtype CreateChannelResponse
-  = CreateChannelResponse { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }
+  = CreateChannelResponse { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -219,7 +219,7 @@ Constructs CreateChannelResponse from required parameters
 #### `newCreateChannelResponse'`
 
 ``` purescript
-newCreateChannelResponse' :: ({ "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }) -> CreateChannelResponse
+newCreateChannelResponse' :: ({ "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }) -> CreateChannelResponse
 ```
 
 Constructs CreateChannelResponse's fields from required parameters
@@ -228,7 +228,7 @@ Constructs CreateChannelResponse's fields from required parameters
 
 ``` purescript
 newtype CreateOriginEndpointRequest
-  = CreateOriginEndpointRequest { "ChannelId" :: String, "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: String, "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) }
+  = CreateOriginEndpointRequest { "ChannelId" :: String, "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: String, "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) }
 ```
 
 Configuration parameters used to create a new OriginEndpoint.
@@ -253,7 +253,7 @@ Constructs CreateOriginEndpointRequest from required parameters
 #### `newCreateOriginEndpointRequest'`
 
 ``` purescript
-newCreateOriginEndpointRequest' :: String -> String -> ({ "ChannelId" :: String, "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: String, "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) } -> { "ChannelId" :: String, "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: String, "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) }) -> CreateOriginEndpointRequest
+newCreateOriginEndpointRequest' :: String -> String -> ({ "ChannelId" :: String, "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: String, "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) } -> { "ChannelId" :: String, "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: String, "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) }) -> CreateOriginEndpointRequest
 ```
 
 Constructs CreateOriginEndpointRequest's fields from required parameters
@@ -262,7 +262,7 @@ Constructs CreateOriginEndpointRequest's fields from required parameters
 
 ``` purescript
 newtype CreateOriginEndpointResponse
-  = CreateOriginEndpointResponse { "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) }
+  = CreateOriginEndpointResponse { "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) }
 ```
 
 ##### Instances
@@ -285,7 +285,7 @@ Constructs CreateOriginEndpointResponse from required parameters
 #### `newCreateOriginEndpointResponse'`
 
 ``` purescript
-newCreateOriginEndpointResponse' :: ({ "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) } -> { "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) }) -> CreateOriginEndpointResponse
+newCreateOriginEndpointResponse' :: ({ "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) } -> { "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) }) -> CreateOriginEndpointResponse
 ```
 
 Constructs CreateOriginEndpointResponse's fields from required parameters
@@ -294,7 +294,7 @@ Constructs CreateOriginEndpointResponse's fields from required parameters
 
 ``` purescript
 newtype DashEncryption
-  = DashEncryption { "KeyRotationIntervalSeconds" :: NullOrUndefined (Int), "SpekeKeyProvider" :: SpekeKeyProvider }
+  = DashEncryption { "KeyRotationIntervalSeconds" :: Maybe (Int), "SpekeKeyProvider" :: SpekeKeyProvider }
 ```
 
 A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
@@ -319,7 +319,7 @@ Constructs DashEncryption from required parameters
 #### `newDashEncryption'`
 
 ``` purescript
-newDashEncryption' :: SpekeKeyProvider -> ({ "KeyRotationIntervalSeconds" :: NullOrUndefined (Int), "SpekeKeyProvider" :: SpekeKeyProvider } -> { "KeyRotationIntervalSeconds" :: NullOrUndefined (Int), "SpekeKeyProvider" :: SpekeKeyProvider }) -> DashEncryption
+newDashEncryption' :: SpekeKeyProvider -> ({ "KeyRotationIntervalSeconds" :: Maybe (Int), "SpekeKeyProvider" :: SpekeKeyProvider } -> { "KeyRotationIntervalSeconds" :: Maybe (Int), "SpekeKeyProvider" :: SpekeKeyProvider }) -> DashEncryption
 ```
 
 Constructs DashEncryption's fields from required parameters
@@ -328,7 +328,7 @@ Constructs DashEncryption's fields from required parameters
 
 ``` purescript
 newtype DashPackage
-  = DashPackage { "Encryption" :: NullOrUndefined (DashEncryption), "ManifestWindowSeconds" :: NullOrUndefined (Int), "MinBufferTimeSeconds" :: NullOrUndefined (Int), "MinUpdatePeriodSeconds" :: NullOrUndefined (Int), "Profile" :: NullOrUndefined (Profile), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection), "SuggestedPresentationDelaySeconds" :: NullOrUndefined (Int) }
+  = DashPackage { "Encryption" :: Maybe (DashEncryption), "ManifestWindowSeconds" :: Maybe (Int), "MinBufferTimeSeconds" :: Maybe (Int), "MinUpdatePeriodSeconds" :: Maybe (Int), "Profile" :: Maybe (Profile), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection), "SuggestedPresentationDelaySeconds" :: Maybe (Int) }
 ```
 
 A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
@@ -353,7 +353,7 @@ Constructs DashPackage from required parameters
 #### `newDashPackage'`
 
 ``` purescript
-newDashPackage' :: ({ "Encryption" :: NullOrUndefined (DashEncryption), "ManifestWindowSeconds" :: NullOrUndefined (Int), "MinBufferTimeSeconds" :: NullOrUndefined (Int), "MinUpdatePeriodSeconds" :: NullOrUndefined (Int), "Profile" :: NullOrUndefined (Profile), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection), "SuggestedPresentationDelaySeconds" :: NullOrUndefined (Int) } -> { "Encryption" :: NullOrUndefined (DashEncryption), "ManifestWindowSeconds" :: NullOrUndefined (Int), "MinBufferTimeSeconds" :: NullOrUndefined (Int), "MinUpdatePeriodSeconds" :: NullOrUndefined (Int), "Profile" :: NullOrUndefined (Profile), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection), "SuggestedPresentationDelaySeconds" :: NullOrUndefined (Int) }) -> DashPackage
+newDashPackage' :: ({ "Encryption" :: Maybe (DashEncryption), "ManifestWindowSeconds" :: Maybe (Int), "MinBufferTimeSeconds" :: Maybe (Int), "MinUpdatePeriodSeconds" :: Maybe (Int), "Profile" :: Maybe (Profile), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection), "SuggestedPresentationDelaySeconds" :: Maybe (Int) } -> { "Encryption" :: Maybe (DashEncryption), "ManifestWindowSeconds" :: Maybe (Int), "MinBufferTimeSeconds" :: Maybe (Int), "MinUpdatePeriodSeconds" :: Maybe (Int), "Profile" :: Maybe (Profile), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection), "SuggestedPresentationDelaySeconds" :: Maybe (Int) }) -> DashPackage
 ```
 
 Constructs DashPackage's fields from required parameters
@@ -490,7 +490,7 @@ Constructs DescribeChannelRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeChannelResponse
-  = DescribeChannelResponse { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }
+  = DescribeChannelResponse { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -513,7 +513,7 @@ Constructs DescribeChannelResponse from required parameters
 #### `newDescribeChannelResponse'`
 
 ``` purescript
-newDescribeChannelResponse' :: ({ "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }) -> DescribeChannelResponse
+newDescribeChannelResponse' :: ({ "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }) -> DescribeChannelResponse
 ```
 
 Constructs DescribeChannelResponse's fields from required parameters
@@ -554,7 +554,7 @@ Constructs DescribeOriginEndpointRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeOriginEndpointResponse
-  = DescribeOriginEndpointResponse { "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) }
+  = DescribeOriginEndpointResponse { "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) }
 ```
 
 ##### Instances
@@ -577,7 +577,7 @@ Constructs DescribeOriginEndpointResponse from required parameters
 #### `newDescribeOriginEndpointResponse'`
 
 ``` purescript
-newDescribeOriginEndpointResponse' :: ({ "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) } -> { "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) }) -> DescribeOriginEndpointResponse
+newDescribeOriginEndpointResponse' :: ({ "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) } -> { "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) }) -> DescribeOriginEndpointResponse
 ```
 
 Constructs DescribeOriginEndpointResponse's fields from required parameters
@@ -602,7 +602,7 @@ Encode EncryptionMethod
 
 ``` purescript
 newtype ForbiddenException
-  = ForbiddenException { "Message" :: NullOrUndefined (String) }
+  = ForbiddenException { "Message" :: Maybe (String) }
 ```
 
 The client is not authorized to access the requested resource.
@@ -627,7 +627,7 @@ Constructs ForbiddenException from required parameters
 #### `newForbiddenException'`
 
 ``` purescript
-newForbiddenException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ForbiddenException
+newForbiddenException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ForbiddenException
 ```
 
 Constructs ForbiddenException's fields from required parameters
@@ -636,7 +636,7 @@ Constructs ForbiddenException's fields from required parameters
 
 ``` purescript
 newtype HlsEncryption
-  = HlsEncryption { "ConstantInitializationVector" :: NullOrUndefined (String), "EncryptionMethod" :: NullOrUndefined (EncryptionMethod), "KeyRotationIntervalSeconds" :: NullOrUndefined (Int), "RepeatExtXKey" :: NullOrUndefined (Boolean), "SpekeKeyProvider" :: SpekeKeyProvider }
+  = HlsEncryption { "ConstantInitializationVector" :: Maybe (String), "EncryptionMethod" :: Maybe (EncryptionMethod), "KeyRotationIntervalSeconds" :: Maybe (Int), "RepeatExtXKey" :: Maybe (Boolean), "SpekeKeyProvider" :: SpekeKeyProvider }
 ```
 
 An HTTP Live Streaming (HLS) encryption configuration.
@@ -661,7 +661,7 @@ Constructs HlsEncryption from required parameters
 #### `newHlsEncryption'`
 
 ``` purescript
-newHlsEncryption' :: SpekeKeyProvider -> ({ "ConstantInitializationVector" :: NullOrUndefined (String), "EncryptionMethod" :: NullOrUndefined (EncryptionMethod), "KeyRotationIntervalSeconds" :: NullOrUndefined (Int), "RepeatExtXKey" :: NullOrUndefined (Boolean), "SpekeKeyProvider" :: SpekeKeyProvider } -> { "ConstantInitializationVector" :: NullOrUndefined (String), "EncryptionMethod" :: NullOrUndefined (EncryptionMethod), "KeyRotationIntervalSeconds" :: NullOrUndefined (Int), "RepeatExtXKey" :: NullOrUndefined (Boolean), "SpekeKeyProvider" :: SpekeKeyProvider }) -> HlsEncryption
+newHlsEncryption' :: SpekeKeyProvider -> ({ "ConstantInitializationVector" :: Maybe (String), "EncryptionMethod" :: Maybe (EncryptionMethod), "KeyRotationIntervalSeconds" :: Maybe (Int), "RepeatExtXKey" :: Maybe (Boolean), "SpekeKeyProvider" :: SpekeKeyProvider } -> { "ConstantInitializationVector" :: Maybe (String), "EncryptionMethod" :: Maybe (EncryptionMethod), "KeyRotationIntervalSeconds" :: Maybe (Int), "RepeatExtXKey" :: Maybe (Boolean), "SpekeKeyProvider" :: SpekeKeyProvider }) -> HlsEncryption
 ```
 
 Constructs HlsEncryption's fields from required parameters
@@ -670,7 +670,7 @@ Constructs HlsEncryption's fields from required parameters
 
 ``` purescript
 newtype HlsIngest
-  = HlsIngest { "IngestEndpoints" :: NullOrUndefined (ListOfIngestEndpoint) }
+  = HlsIngest { "IngestEndpoints" :: Maybe (ListOfIngestEndpoint) }
 ```
 
 An HTTP Live Streaming (HLS) ingest resource configuration.
@@ -695,7 +695,7 @@ Constructs HlsIngest from required parameters
 #### `newHlsIngest'`
 
 ``` purescript
-newHlsIngest' :: ({ "IngestEndpoints" :: NullOrUndefined (ListOfIngestEndpoint) } -> { "IngestEndpoints" :: NullOrUndefined (ListOfIngestEndpoint) }) -> HlsIngest
+newHlsIngest' :: ({ "IngestEndpoints" :: Maybe (ListOfIngestEndpoint) } -> { "IngestEndpoints" :: Maybe (ListOfIngestEndpoint) }) -> HlsIngest
 ```
 
 Constructs HlsIngest's fields from required parameters
@@ -704,7 +704,7 @@ Constructs HlsIngest's fields from required parameters
 
 ``` purescript
 newtype HlsPackage
-  = HlsPackage { "AdMarkers" :: NullOrUndefined (AdMarkers), "Encryption" :: NullOrUndefined (HlsEncryption), "IncludeIframeOnlyStream" :: NullOrUndefined (Boolean), "PlaylistType" :: NullOrUndefined (PlaylistType), "PlaylistWindowSeconds" :: NullOrUndefined (Int), "ProgramDateTimeIntervalSeconds" :: NullOrUndefined (Int), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection), "UseAudioRenditionGroup" :: NullOrUndefined (Boolean) }
+  = HlsPackage { "AdMarkers" :: Maybe (AdMarkers), "Encryption" :: Maybe (HlsEncryption), "IncludeIframeOnlyStream" :: Maybe (Boolean), "PlaylistType" :: Maybe (PlaylistType), "PlaylistWindowSeconds" :: Maybe (Int), "ProgramDateTimeIntervalSeconds" :: Maybe (Int), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection), "UseAudioRenditionGroup" :: Maybe (Boolean) }
 ```
 
 An HTTP Live Streaming (HLS) packaging configuration.
@@ -729,7 +729,7 @@ Constructs HlsPackage from required parameters
 #### `newHlsPackage'`
 
 ``` purescript
-newHlsPackage' :: ({ "AdMarkers" :: NullOrUndefined (AdMarkers), "Encryption" :: NullOrUndefined (HlsEncryption), "IncludeIframeOnlyStream" :: NullOrUndefined (Boolean), "PlaylistType" :: NullOrUndefined (PlaylistType), "PlaylistWindowSeconds" :: NullOrUndefined (Int), "ProgramDateTimeIntervalSeconds" :: NullOrUndefined (Int), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection), "UseAudioRenditionGroup" :: NullOrUndefined (Boolean) } -> { "AdMarkers" :: NullOrUndefined (AdMarkers), "Encryption" :: NullOrUndefined (HlsEncryption), "IncludeIframeOnlyStream" :: NullOrUndefined (Boolean), "PlaylistType" :: NullOrUndefined (PlaylistType), "PlaylistWindowSeconds" :: NullOrUndefined (Int), "ProgramDateTimeIntervalSeconds" :: NullOrUndefined (Int), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection), "UseAudioRenditionGroup" :: NullOrUndefined (Boolean) }) -> HlsPackage
+newHlsPackage' :: ({ "AdMarkers" :: Maybe (AdMarkers), "Encryption" :: Maybe (HlsEncryption), "IncludeIframeOnlyStream" :: Maybe (Boolean), "PlaylistType" :: Maybe (PlaylistType), "PlaylistWindowSeconds" :: Maybe (Int), "ProgramDateTimeIntervalSeconds" :: Maybe (Int), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection), "UseAudioRenditionGroup" :: Maybe (Boolean) } -> { "AdMarkers" :: Maybe (AdMarkers), "Encryption" :: Maybe (HlsEncryption), "IncludeIframeOnlyStream" :: Maybe (Boolean), "PlaylistType" :: Maybe (PlaylistType), "PlaylistWindowSeconds" :: Maybe (Int), "ProgramDateTimeIntervalSeconds" :: Maybe (Int), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection), "UseAudioRenditionGroup" :: Maybe (Boolean) }) -> HlsPackage
 ```
 
 Constructs HlsPackage's fields from required parameters
@@ -738,7 +738,7 @@ Constructs HlsPackage's fields from required parameters
 
 ``` purescript
 newtype IngestEndpoint
-  = IngestEndpoint { "Password" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }
+  = IngestEndpoint { "Password" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) }
 ```
 
 An endpoint for ingesting source content for a Channel.
@@ -763,7 +763,7 @@ Constructs IngestEndpoint from required parameters
 #### `newIngestEndpoint'`
 
 ``` purescript
-newIngestEndpoint' :: ({ "Password" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) } -> { "Password" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }) -> IngestEndpoint
+newIngestEndpoint' :: ({ "Password" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) } -> { "Password" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) }) -> IngestEndpoint
 ```
 
 Constructs IngestEndpoint's fields from required parameters
@@ -772,7 +772,7 @@ Constructs IngestEndpoint's fields from required parameters
 
 ``` purescript
 newtype InternalServerErrorException
-  = InternalServerErrorException { "Message" :: NullOrUndefined (String) }
+  = InternalServerErrorException { "Message" :: Maybe (String) }
 ```
 
 An unexpected error occurred.
@@ -797,7 +797,7 @@ Constructs InternalServerErrorException from required parameters
 #### `newInternalServerErrorException'`
 
 ``` purescript
-newInternalServerErrorException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InternalServerErrorException
+newInternalServerErrorException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InternalServerErrorException
 ```
 
 Constructs InternalServerErrorException's fields from required parameters
@@ -806,7 +806,7 @@ Constructs InternalServerErrorException's fields from required parameters
 
 ``` purescript
 newtype ListChannelsRequest
-  = ListChannelsRequest { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListChannelsRequest { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -829,7 +829,7 @@ Constructs ListChannelsRequest from required parameters
 #### `newListChannelsRequest'`
 
 ``` purescript
-newListChannelsRequest' :: ({ "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListChannelsRequest
+newListChannelsRequest' :: ({ "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListChannelsRequest
 ```
 
 Constructs ListChannelsRequest's fields from required parameters
@@ -838,7 +838,7 @@ Constructs ListChannelsRequest's fields from required parameters
 
 ``` purescript
 newtype ListChannelsResponse
-  = ListChannelsResponse { "Channels" :: NullOrUndefined (ListOfChannel), "NextToken" :: NullOrUndefined (String) }
+  = ListChannelsResponse { "Channels" :: Maybe (ListOfChannel), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -861,7 +861,7 @@ Constructs ListChannelsResponse from required parameters
 #### `newListChannelsResponse'`
 
 ``` purescript
-newListChannelsResponse' :: ({ "Channels" :: NullOrUndefined (ListOfChannel), "NextToken" :: NullOrUndefined (String) } -> { "Channels" :: NullOrUndefined (ListOfChannel), "NextToken" :: NullOrUndefined (String) }) -> ListChannelsResponse
+newListChannelsResponse' :: ({ "Channels" :: Maybe (ListOfChannel), "NextToken" :: Maybe (String) } -> { "Channels" :: Maybe (ListOfChannel), "NextToken" :: Maybe (String) }) -> ListChannelsResponse
 ```
 
 Constructs ListChannelsResponse's fields from required parameters
@@ -934,7 +934,7 @@ Encode ListOf__string
 
 ``` purescript
 newtype ListOriginEndpointsRequest
-  = ListOriginEndpointsRequest { "ChannelId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListOriginEndpointsRequest { "ChannelId" :: Maybe (String), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -957,7 +957,7 @@ Constructs ListOriginEndpointsRequest from required parameters
 #### `newListOriginEndpointsRequest'`
 
 ``` purescript
-newListOriginEndpointsRequest' :: ({ "ChannelId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "ChannelId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListOriginEndpointsRequest
+newListOriginEndpointsRequest' :: ({ "ChannelId" :: Maybe (String), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "ChannelId" :: Maybe (String), "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListOriginEndpointsRequest
 ```
 
 Constructs ListOriginEndpointsRequest's fields from required parameters
@@ -966,7 +966,7 @@ Constructs ListOriginEndpointsRequest's fields from required parameters
 
 ``` purescript
 newtype ListOriginEndpointsResponse
-  = ListOriginEndpointsResponse { "NextToken" :: NullOrUndefined (String), "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) }
+  = ListOriginEndpointsResponse { "NextToken" :: Maybe (String), "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) }
 ```
 
 ##### Instances
@@ -989,7 +989,7 @@ Constructs ListOriginEndpointsResponse from required parameters
 #### `newListOriginEndpointsResponse'`
 
 ``` purescript
-newListOriginEndpointsResponse' :: ({ "NextToken" :: NullOrUndefined (String), "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) } -> { "NextToken" :: NullOrUndefined (String), "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) }) -> ListOriginEndpointsResponse
+newListOriginEndpointsResponse' :: ({ "NextToken" :: Maybe (String), "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) } -> { "NextToken" :: Maybe (String), "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) }) -> ListOriginEndpointsResponse
 ```
 
 Constructs ListOriginEndpointsResponse's fields from required parameters
@@ -1048,7 +1048,7 @@ Constructs MssEncryption's fields from required parameters
 
 ``` purescript
 newtype MssPackage
-  = MssPackage { "Encryption" :: NullOrUndefined (MssEncryption), "ManifestWindowSeconds" :: NullOrUndefined (Int), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection) }
+  = MssPackage { "Encryption" :: Maybe (MssEncryption), "ManifestWindowSeconds" :: Maybe (Int), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection) }
 ```
 
 A Microsoft Smooth Streaming (MSS) packaging configuration.
@@ -1073,7 +1073,7 @@ Constructs MssPackage from required parameters
 #### `newMssPackage'`
 
 ``` purescript
-newMssPackage' :: ({ "Encryption" :: NullOrUndefined (MssEncryption), "ManifestWindowSeconds" :: NullOrUndefined (Int), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection) } -> { "Encryption" :: NullOrUndefined (MssEncryption), "ManifestWindowSeconds" :: NullOrUndefined (Int), "SegmentDurationSeconds" :: NullOrUndefined (Int), "StreamSelection" :: NullOrUndefined (StreamSelection) }) -> MssPackage
+newMssPackage' :: ({ "Encryption" :: Maybe (MssEncryption), "ManifestWindowSeconds" :: Maybe (Int), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection) } -> { "Encryption" :: Maybe (MssEncryption), "ManifestWindowSeconds" :: Maybe (Int), "SegmentDurationSeconds" :: Maybe (Int), "StreamSelection" :: Maybe (StreamSelection) }) -> MssPackage
 ```
 
 Constructs MssPackage's fields from required parameters
@@ -1082,7 +1082,7 @@ Constructs MssPackage's fields from required parameters
 
 ``` purescript
 newtype NotFoundException
-  = NotFoundException { "Message" :: NullOrUndefined (String) }
+  = NotFoundException { "Message" :: Maybe (String) }
 ```
 
 The requested resource does not exist.
@@ -1107,7 +1107,7 @@ Constructs NotFoundException from required parameters
 #### `newNotFoundException'`
 
 ``` purescript
-newNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> NotFoundException
+newNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> NotFoundException
 ```
 
 Constructs NotFoundException's fields from required parameters
@@ -1116,7 +1116,7 @@ Constructs NotFoundException's fields from required parameters
 
 ``` purescript
 newtype OriginEndpoint
-  = OriginEndpoint { "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) }
+  = OriginEndpoint { "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) }
 ```
 
 An OriginEndpoint resource configuration.
@@ -1141,7 +1141,7 @@ Constructs OriginEndpoint from required parameters
 #### `newOriginEndpoint'`
 
 ``` purescript
-newOriginEndpoint' :: ({ "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) } -> { "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) }) -> OriginEndpoint
+newOriginEndpoint' :: ({ "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) } -> { "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) }) -> OriginEndpoint
 ```
 
 Constructs OriginEndpoint's fields from required parameters
@@ -1150,7 +1150,7 @@ Constructs OriginEndpoint's fields from required parameters
 
 ``` purescript
 newtype OriginEndpointCreateParameters
-  = OriginEndpointCreateParameters { "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) }
+  = OriginEndpointCreateParameters { "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) }
 ```
 
 Configuration parameters for a new OriginEndpoint.
@@ -1175,7 +1175,7 @@ Constructs OriginEndpointCreateParameters from required parameters
 #### `newOriginEndpointCreateParameters'`
 
 ``` purescript
-newOriginEndpointCreateParameters' :: ({ "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) } -> { "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) }) -> OriginEndpointCreateParameters
+newOriginEndpointCreateParameters' :: ({ "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) } -> { "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) }) -> OriginEndpointCreateParameters
 ```
 
 Constructs OriginEndpointCreateParameters's fields from required parameters
@@ -1184,7 +1184,7 @@ Constructs OriginEndpointCreateParameters's fields from required parameters
 
 ``` purescript
 newtype OriginEndpointList
-  = OriginEndpointList { "NextToken" :: NullOrUndefined (String), "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) }
+  = OriginEndpointList { "NextToken" :: Maybe (String), "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) }
 ```
 
 A collection of OriginEndpoint records.
@@ -1209,7 +1209,7 @@ Constructs OriginEndpointList from required parameters
 #### `newOriginEndpointList'`
 
 ``` purescript
-newOriginEndpointList' :: ({ "NextToken" :: NullOrUndefined (String), "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) } -> { "NextToken" :: NullOrUndefined (String), "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) }) -> OriginEndpointList
+newOriginEndpointList' :: ({ "NextToken" :: Maybe (String), "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) } -> { "NextToken" :: Maybe (String), "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) }) -> OriginEndpointList
 ```
 
 Constructs OriginEndpointList's fields from required parameters
@@ -1218,7 +1218,7 @@ Constructs OriginEndpointList's fields from required parameters
 
 ``` purescript
 newtype OriginEndpointUpdateParameters
-  = OriginEndpointUpdateParameters { "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) }
+  = OriginEndpointUpdateParameters { "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) }
 ```
 
 Configuration parameters for updating an existing OriginEndpoint.
@@ -1243,7 +1243,7 @@ Constructs OriginEndpointUpdateParameters from required parameters
 #### `newOriginEndpointUpdateParameters'`
 
 ``` purescript
-newOriginEndpointUpdateParameters' :: ({ "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) } -> { "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) }) -> OriginEndpointUpdateParameters
+newOriginEndpointUpdateParameters' :: ({ "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) } -> { "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) }) -> OriginEndpointUpdateParameters
 ```
 
 Constructs OriginEndpointUpdateParameters's fields from required parameters
@@ -1316,7 +1316,7 @@ Constructs RotateChannelCredentialsRequest's fields from required parameters
 
 ``` purescript
 newtype RotateChannelCredentialsResponse
-  = RotateChannelCredentialsResponse { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }
+  = RotateChannelCredentialsResponse { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1339,7 +1339,7 @@ Constructs RotateChannelCredentialsResponse from required parameters
 #### `newRotateChannelCredentialsResponse'`
 
 ``` purescript
-newRotateChannelCredentialsResponse' :: ({ "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }) -> RotateChannelCredentialsResponse
+newRotateChannelCredentialsResponse' :: ({ "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }) -> RotateChannelCredentialsResponse
 ```
 
 Constructs RotateChannelCredentialsResponse's fields from required parameters
@@ -1348,7 +1348,7 @@ Constructs RotateChannelCredentialsResponse's fields from required parameters
 
 ``` purescript
 newtype ServiceUnavailableException
-  = ServiceUnavailableException { "Message" :: NullOrUndefined (String) }
+  = ServiceUnavailableException { "Message" :: Maybe (String) }
 ```
 
 An unexpected error occurred.
@@ -1373,7 +1373,7 @@ Constructs ServiceUnavailableException from required parameters
 #### `newServiceUnavailableException'`
 
 ``` purescript
-newServiceUnavailableException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ServiceUnavailableException
+newServiceUnavailableException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ServiceUnavailableException
 ```
 
 Constructs ServiceUnavailableException's fields from required parameters
@@ -1432,7 +1432,7 @@ Encode StreamOrder
 
 ``` purescript
 newtype StreamSelection
-  = StreamSelection { "MaxVideoBitsPerSecond" :: NullOrUndefined (Int), "MinVideoBitsPerSecond" :: NullOrUndefined (Int), "StreamOrder" :: NullOrUndefined (StreamOrder) }
+  = StreamSelection { "MaxVideoBitsPerSecond" :: Maybe (Int), "MinVideoBitsPerSecond" :: Maybe (Int), "StreamOrder" :: Maybe (StreamOrder) }
 ```
 
 A StreamSelection configuration.
@@ -1457,7 +1457,7 @@ Constructs StreamSelection from required parameters
 #### `newStreamSelection'`
 
 ``` purescript
-newStreamSelection' :: ({ "MaxVideoBitsPerSecond" :: NullOrUndefined (Int), "MinVideoBitsPerSecond" :: NullOrUndefined (Int), "StreamOrder" :: NullOrUndefined (StreamOrder) } -> { "MaxVideoBitsPerSecond" :: NullOrUndefined (Int), "MinVideoBitsPerSecond" :: NullOrUndefined (Int), "StreamOrder" :: NullOrUndefined (StreamOrder) }) -> StreamSelection
+newStreamSelection' :: ({ "MaxVideoBitsPerSecond" :: Maybe (Int), "MinVideoBitsPerSecond" :: Maybe (Int), "StreamOrder" :: Maybe (StreamOrder) } -> { "MaxVideoBitsPerSecond" :: Maybe (Int), "MinVideoBitsPerSecond" :: Maybe (Int), "StreamOrder" :: Maybe (StreamOrder) }) -> StreamSelection
 ```
 
 Constructs StreamSelection's fields from required parameters
@@ -1466,7 +1466,7 @@ Constructs StreamSelection's fields from required parameters
 
 ``` purescript
 newtype TooManyRequestsException
-  = TooManyRequestsException { "Message" :: NullOrUndefined (String) }
+  = TooManyRequestsException { "Message" :: Maybe (String) }
 ```
 
 The client has exceeded their resource or throttling limits.
@@ -1491,7 +1491,7 @@ Constructs TooManyRequestsException from required parameters
 #### `newTooManyRequestsException'`
 
 ``` purescript
-newTooManyRequestsException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> TooManyRequestsException
+newTooManyRequestsException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> TooManyRequestsException
 ```
 
 Constructs TooManyRequestsException's fields from required parameters
@@ -1500,7 +1500,7 @@ Constructs TooManyRequestsException's fields from required parameters
 
 ``` purescript
 newtype UnprocessableEntityException
-  = UnprocessableEntityException { "Message" :: NullOrUndefined (String) }
+  = UnprocessableEntityException { "Message" :: Maybe (String) }
 ```
 
 The parameters sent in the request are not valid.
@@ -1525,7 +1525,7 @@ Constructs UnprocessableEntityException from required parameters
 #### `newUnprocessableEntityException'`
 
 ``` purescript
-newUnprocessableEntityException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> UnprocessableEntityException
+newUnprocessableEntityException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> UnprocessableEntityException
 ```
 
 Constructs UnprocessableEntityException's fields from required parameters
@@ -1534,7 +1534,7 @@ Constructs UnprocessableEntityException's fields from required parameters
 
 ``` purescript
 newtype UpdateChannelRequest
-  = UpdateChannelRequest { "Description" :: NullOrUndefined (String), "Id" :: String }
+  = UpdateChannelRequest { "Description" :: Maybe (String), "Id" :: String }
 ```
 
 Configuration parameters used to update the Channel.
@@ -1559,7 +1559,7 @@ Constructs UpdateChannelRequest from required parameters
 #### `newUpdateChannelRequest'`
 
 ``` purescript
-newUpdateChannelRequest' :: String -> ({ "Description" :: NullOrUndefined (String), "Id" :: String } -> { "Description" :: NullOrUndefined (String), "Id" :: String }) -> UpdateChannelRequest
+newUpdateChannelRequest' :: String -> ({ "Description" :: Maybe (String), "Id" :: String } -> { "Description" :: Maybe (String), "Id" :: String }) -> UpdateChannelRequest
 ```
 
 Constructs UpdateChannelRequest's fields from required parameters
@@ -1568,7 +1568,7 @@ Constructs UpdateChannelRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateChannelResponse
-  = UpdateChannelResponse { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }
+  = UpdateChannelResponse { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1591,7 +1591,7 @@ Constructs UpdateChannelResponse from required parameters
 #### `newUpdateChannelResponse'`
 
 ``` purescript
-newUpdateChannelResponse' :: ({ "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "HlsIngest" :: NullOrUndefined (HlsIngest), "Id" :: NullOrUndefined (String) }) -> UpdateChannelResponse
+newUpdateChannelResponse' :: ({ "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Description" :: Maybe (String), "HlsIngest" :: Maybe (HlsIngest), "Id" :: Maybe (String) }) -> UpdateChannelResponse
 ```
 
 Constructs UpdateChannelResponse's fields from required parameters
@@ -1600,7 +1600,7 @@ Constructs UpdateChannelResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateOriginEndpointRequest
-  = UpdateOriginEndpointRequest { "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: String, "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) }
+  = UpdateOriginEndpointRequest { "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: String, "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) }
 ```
 
 Configuration parameters used to update an existing OriginEndpoint.
@@ -1625,7 +1625,7 @@ Constructs UpdateOriginEndpointRequest from required parameters
 #### `newUpdateOriginEndpointRequest'`
 
 ``` purescript
-newUpdateOriginEndpointRequest' :: String -> ({ "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: String, "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) } -> { "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: String, "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Whitelist" :: NullOrUndefined (ListOf__string) }) -> UpdateOriginEndpointRequest
+newUpdateOriginEndpointRequest' :: String -> ({ "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: String, "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) } -> { "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: String, "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Whitelist" :: Maybe (ListOf__string) }) -> UpdateOriginEndpointRequest
 ```
 
 Constructs UpdateOriginEndpointRequest's fields from required parameters
@@ -1634,7 +1634,7 @@ Constructs UpdateOriginEndpointRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateOriginEndpointResponse
-  = UpdateOriginEndpointResponse { "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) }
+  = UpdateOriginEndpointResponse { "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) }
 ```
 
 ##### Instances
@@ -1657,7 +1657,7 @@ Constructs UpdateOriginEndpointResponse from required parameters
 #### `newUpdateOriginEndpointResponse'`
 
 ``` purescript
-newUpdateOriginEndpointResponse' :: ({ "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) } -> { "Arn" :: NullOrUndefined (String), "ChannelId" :: NullOrUndefined (String), "DashPackage" :: NullOrUndefined (DashPackage), "Description" :: NullOrUndefined (String), "HlsPackage" :: NullOrUndefined (HlsPackage), "Id" :: NullOrUndefined (String), "ManifestName" :: NullOrUndefined (String), "MssPackage" :: NullOrUndefined (MssPackage), "StartoverWindowSeconds" :: NullOrUndefined (Int), "TimeDelaySeconds" :: NullOrUndefined (Int), "Url" :: NullOrUndefined (String), "Whitelist" :: NullOrUndefined (ListOf__string) }) -> UpdateOriginEndpointResponse
+newUpdateOriginEndpointResponse' :: ({ "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) } -> { "Arn" :: Maybe (String), "ChannelId" :: Maybe (String), "DashPackage" :: Maybe (DashPackage), "Description" :: Maybe (String), "HlsPackage" :: Maybe (HlsPackage), "Id" :: Maybe (String), "ManifestName" :: Maybe (String), "MssPackage" :: Maybe (MssPackage), "StartoverWindowSeconds" :: Maybe (Int), "TimeDelaySeconds" :: Maybe (Int), "Url" :: Maybe (String), "Whitelist" :: Maybe (ListOf__string) }) -> UpdateOriginEndpointResponse
 ```
 
 Constructs UpdateOriginEndpointResponse's fields from required parameters

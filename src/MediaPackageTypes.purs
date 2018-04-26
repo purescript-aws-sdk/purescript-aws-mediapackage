@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -29,10 +28,10 @@ instance encodeAdMarkers :: Encode AdMarkers where encode = genericEncode option
 
 -- | A Channel resource configuration.
 newtype Channel = Channel 
-  { "Arn" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsIngest" :: NullOrUndefined (HlsIngest)
-  , "Id" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "HlsIngest" :: Maybe (HlsIngest)
+  , "Id" :: Maybe (String)
   }
 derive instance newtypeChannel :: Newtype Channel _
 derive instance repGenericChannel :: Generic Channel _
@@ -42,19 +41,19 @@ instance encodeChannel :: Encode Channel where encode = genericEncode options
 
 -- | Constructs Channel from required parameters
 newChannel :: Channel
-newChannel  = Channel { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newChannel  = Channel { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 -- | Constructs Channel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannel' :: ( { "Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } ) -> Channel
-newChannel'  customize = (Channel <<< customize) { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newChannel' :: ( { "Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } ) -> Channel
+newChannel'  customize = (Channel <<< customize) { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 
 
 -- | Configuration parameters for a new Channel.
 newtype ChannelCreateParameters = ChannelCreateParameters 
-  { "Description" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
+  { "Description" :: Maybe (String)
+  , "Id" :: Maybe (String)
   }
 derive instance newtypeChannelCreateParameters :: Newtype ChannelCreateParameters _
 derive instance repGenericChannelCreateParameters :: Generic ChannelCreateParameters _
@@ -64,19 +63,19 @@ instance encodeChannelCreateParameters :: Encode ChannelCreateParameters where e
 
 -- | Constructs ChannelCreateParameters from required parameters
 newChannelCreateParameters :: ChannelCreateParameters
-newChannelCreateParameters  = ChannelCreateParameters { "Description": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newChannelCreateParameters  = ChannelCreateParameters { "Description": Nothing, "Id": Nothing }
 
 -- | Constructs ChannelCreateParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannelCreateParameters' :: ( { "Description" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) } -> {"Description" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) } ) -> ChannelCreateParameters
-newChannelCreateParameters'  customize = (ChannelCreateParameters <<< customize) { "Description": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newChannelCreateParameters' :: ( { "Description" :: Maybe (String) , "Id" :: Maybe (String) } -> {"Description" :: Maybe (String) , "Id" :: Maybe (String) } ) -> ChannelCreateParameters
+newChannelCreateParameters'  customize = (ChannelCreateParameters <<< customize) { "Description": Nothing, "Id": Nothing }
 
 
 
 -- | A collection of Channel records.
 newtype ChannelList = ChannelList 
-  { "Channels" :: NullOrUndefined (ListOfChannel)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Channels" :: Maybe (ListOfChannel)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeChannelList :: Newtype ChannelList _
 derive instance repGenericChannelList :: Generic ChannelList _
@@ -86,18 +85,18 @@ instance encodeChannelList :: Encode ChannelList where encode = genericEncode op
 
 -- | Constructs ChannelList from required parameters
 newChannelList :: ChannelList
-newChannelList  = ChannelList { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newChannelList  = ChannelList { "Channels": Nothing, "NextToken": Nothing }
 
 -- | Constructs ChannelList's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannelList' :: ( { "Channels" :: NullOrUndefined (ListOfChannel) , "NextToken" :: NullOrUndefined (String) } -> {"Channels" :: NullOrUndefined (ListOfChannel) , "NextToken" :: NullOrUndefined (String) } ) -> ChannelList
-newChannelList'  customize = (ChannelList <<< customize) { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newChannelList' :: ( { "Channels" :: Maybe (ListOfChannel) , "NextToken" :: Maybe (String) } -> {"Channels" :: Maybe (ListOfChannel) , "NextToken" :: Maybe (String) } ) -> ChannelList
+newChannelList'  customize = (ChannelList <<< customize) { "Channels": Nothing, "NextToken": Nothing }
 
 
 
 -- | Configuration parameters for updating an existing Channel.
 newtype ChannelUpdateParameters = ChannelUpdateParameters 
-  { "Description" :: NullOrUndefined (String)
+  { "Description" :: Maybe (String)
   }
 derive instance newtypeChannelUpdateParameters :: Newtype ChannelUpdateParameters _
 derive instance repGenericChannelUpdateParameters :: Generic ChannelUpdateParameters _
@@ -107,18 +106,18 @@ instance encodeChannelUpdateParameters :: Encode ChannelUpdateParameters where e
 
 -- | Constructs ChannelUpdateParameters from required parameters
 newChannelUpdateParameters :: ChannelUpdateParameters
-newChannelUpdateParameters  = ChannelUpdateParameters { "Description": (NullOrUndefined Nothing) }
+newChannelUpdateParameters  = ChannelUpdateParameters { "Description": Nothing }
 
 -- | Constructs ChannelUpdateParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannelUpdateParameters' :: ( { "Description" :: NullOrUndefined (String) } -> {"Description" :: NullOrUndefined (String) } ) -> ChannelUpdateParameters
-newChannelUpdateParameters'  customize = (ChannelUpdateParameters <<< customize) { "Description": (NullOrUndefined Nothing) }
+newChannelUpdateParameters' :: ( { "Description" :: Maybe (String) } -> {"Description" :: Maybe (String) } ) -> ChannelUpdateParameters
+newChannelUpdateParameters'  customize = (ChannelUpdateParameters <<< customize) { "Description": Nothing }
 
 
 
 -- | A new Channel configuration.
 newtype CreateChannelRequest = CreateChannelRequest 
-  { "Description" :: NullOrUndefined (String)
+  { "Description" :: Maybe (String)
   , "Id" :: (String)
   }
 derive instance newtypeCreateChannelRequest :: Newtype CreateChannelRequest _
@@ -129,20 +128,20 @@ instance encodeCreateChannelRequest :: Encode CreateChannelRequest where encode 
 
 -- | Constructs CreateChannelRequest from required parameters
 newCreateChannelRequest :: String -> CreateChannelRequest
-newCreateChannelRequest _Id = CreateChannelRequest { "Id": _Id, "Description": (NullOrUndefined Nothing) }
+newCreateChannelRequest _Id = CreateChannelRequest { "Id": _Id, "Description": Nothing }
 
 -- | Constructs CreateChannelRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateChannelRequest' :: String -> ( { "Description" :: NullOrUndefined (String) , "Id" :: (String) } -> {"Description" :: NullOrUndefined (String) , "Id" :: (String) } ) -> CreateChannelRequest
-newCreateChannelRequest' _Id customize = (CreateChannelRequest <<< customize) { "Id": _Id, "Description": (NullOrUndefined Nothing) }
+newCreateChannelRequest' :: String -> ( { "Description" :: Maybe (String) , "Id" :: (String) } -> {"Description" :: Maybe (String) , "Id" :: (String) } ) -> CreateChannelRequest
+newCreateChannelRequest' _Id customize = (CreateChannelRequest <<< customize) { "Id": _Id, "Description": Nothing }
 
 
 
 newtype CreateChannelResponse = CreateChannelResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsIngest" :: NullOrUndefined (HlsIngest)
-  , "Id" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "HlsIngest" :: Maybe (HlsIngest)
+  , "Id" :: Maybe (String)
   }
 derive instance newtypeCreateChannelResponse :: Newtype CreateChannelResponse _
 derive instance repGenericCreateChannelResponse :: Generic CreateChannelResponse _
@@ -152,27 +151,27 @@ instance encodeCreateChannelResponse :: Encode CreateChannelResponse where encod
 
 -- | Constructs CreateChannelResponse from required parameters
 newCreateChannelResponse :: CreateChannelResponse
-newCreateChannelResponse  = CreateChannelResponse { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newCreateChannelResponse  = CreateChannelResponse { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 -- | Constructs CreateChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateChannelResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } ) -> CreateChannelResponse
-newCreateChannelResponse'  customize = (CreateChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newCreateChannelResponse' :: ( { "Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } ) -> CreateChannelResponse
+newCreateChannelResponse'  customize = (CreateChannelResponse <<< customize) { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 
 
 -- | Configuration parameters used to create a new OriginEndpoint.
 newtype CreateOriginEndpointRequest = CreateOriginEndpointRequest 
   { "ChannelId" :: (String)
-  , "DashPackage" :: NullOrUndefined (DashPackage)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsPackage" :: NullOrUndefined (HlsPackage)
+  , "DashPackage" :: Maybe (DashPackage)
+  , "Description" :: Maybe (String)
+  , "HlsPackage" :: Maybe (HlsPackage)
   , "Id" :: (String)
-  , "ManifestName" :: NullOrUndefined (String)
-  , "MssPackage" :: NullOrUndefined (MssPackage)
-  , "StartoverWindowSeconds" :: NullOrUndefined (Int)
-  , "TimeDelaySeconds" :: NullOrUndefined (Int)
-  , "Whitelist" :: NullOrUndefined (ListOf__string)
+  , "ManifestName" :: Maybe (String)
+  , "MssPackage" :: Maybe (MssPackage)
+  , "StartoverWindowSeconds" :: Maybe (Int)
+  , "TimeDelaySeconds" :: Maybe (Int)
+  , "Whitelist" :: Maybe (ListOf__string)
   }
 derive instance newtypeCreateOriginEndpointRequest :: Newtype CreateOriginEndpointRequest _
 derive instance repGenericCreateOriginEndpointRequest :: Generic CreateOriginEndpointRequest _
@@ -182,28 +181,28 @@ instance encodeCreateOriginEndpointRequest :: Encode CreateOriginEndpointRequest
 
 -- | Constructs CreateOriginEndpointRequest from required parameters
 newCreateOriginEndpointRequest :: String -> String -> CreateOriginEndpointRequest
-newCreateOriginEndpointRequest _ChannelId _Id = CreateOriginEndpointRequest { "ChannelId": _ChannelId, "Id": _Id, "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newCreateOriginEndpointRequest _ChannelId _Id = CreateOriginEndpointRequest { "ChannelId": _ChannelId, "Id": _Id, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Whitelist": Nothing }
 
 -- | Constructs CreateOriginEndpointRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateOriginEndpointRequest' :: String -> String -> ( { "ChannelId" :: (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Whitelist" :: NullOrUndefined (ListOf__string) } -> {"ChannelId" :: (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Whitelist" :: NullOrUndefined (ListOf__string) } ) -> CreateOriginEndpointRequest
-newCreateOriginEndpointRequest' _ChannelId _Id customize = (CreateOriginEndpointRequest <<< customize) { "ChannelId": _ChannelId, "Id": _Id, "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newCreateOriginEndpointRequest' :: String -> String -> ( { "ChannelId" :: (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Whitelist" :: Maybe (ListOf__string) } -> {"ChannelId" :: (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Whitelist" :: Maybe (ListOf__string) } ) -> CreateOriginEndpointRequest
+newCreateOriginEndpointRequest' _ChannelId _Id customize = (CreateOriginEndpointRequest <<< customize) { "ChannelId": _ChannelId, "Id": _Id, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Whitelist": Nothing }
 
 
 
 newtype CreateOriginEndpointResponse = CreateOriginEndpointResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "ChannelId" :: NullOrUndefined (String)
-  , "DashPackage" :: NullOrUndefined (DashPackage)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsPackage" :: NullOrUndefined (HlsPackage)
-  , "Id" :: NullOrUndefined (String)
-  , "ManifestName" :: NullOrUndefined (String)
-  , "MssPackage" :: NullOrUndefined (MssPackage)
-  , "StartoverWindowSeconds" :: NullOrUndefined (Int)
-  , "TimeDelaySeconds" :: NullOrUndefined (Int)
-  , "Url" :: NullOrUndefined (String)
-  , "Whitelist" :: NullOrUndefined (ListOf__string)
+  { "Arn" :: Maybe (String)
+  , "ChannelId" :: Maybe (String)
+  , "DashPackage" :: Maybe (DashPackage)
+  , "Description" :: Maybe (String)
+  , "HlsPackage" :: Maybe (HlsPackage)
+  , "Id" :: Maybe (String)
+  , "ManifestName" :: Maybe (String)
+  , "MssPackage" :: Maybe (MssPackage)
+  , "StartoverWindowSeconds" :: Maybe (Int)
+  , "TimeDelaySeconds" :: Maybe (Int)
+  , "Url" :: Maybe (String)
+  , "Whitelist" :: Maybe (ListOf__string)
   }
 derive instance newtypeCreateOriginEndpointResponse :: Newtype CreateOriginEndpointResponse _
 derive instance repGenericCreateOriginEndpointResponse :: Generic CreateOriginEndpointResponse _
@@ -213,18 +212,18 @@ instance encodeCreateOriginEndpointResponse :: Encode CreateOriginEndpointRespon
 
 -- | Constructs CreateOriginEndpointResponse from required parameters
 newCreateOriginEndpointResponse :: CreateOriginEndpointResponse
-newCreateOriginEndpointResponse  = CreateOriginEndpointResponse { "Arn": (NullOrUndefined Nothing), "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newCreateOriginEndpointResponse  = CreateOriginEndpointResponse { "Arn": Nothing, "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Url": Nothing, "Whitelist": Nothing }
 
 -- | Constructs CreateOriginEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateOriginEndpointResponse' :: ( { "Arn" :: NullOrUndefined (String) , "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Url" :: NullOrUndefined (String) , "Whitelist" :: NullOrUndefined (ListOf__string) } -> {"Arn" :: NullOrUndefined (String) , "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Url" :: NullOrUndefined (String) , "Whitelist" :: NullOrUndefined (ListOf__string) } ) -> CreateOriginEndpointResponse
-newCreateOriginEndpointResponse'  customize = (CreateOriginEndpointResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newCreateOriginEndpointResponse' :: ( { "Arn" :: Maybe (String) , "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Url" :: Maybe (String) , "Whitelist" :: Maybe (ListOf__string) } -> {"Arn" :: Maybe (String) , "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Url" :: Maybe (String) , "Whitelist" :: Maybe (ListOf__string) } ) -> CreateOriginEndpointResponse
+newCreateOriginEndpointResponse'  customize = (CreateOriginEndpointResponse <<< customize) { "Arn": Nothing, "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Url": Nothing, "Whitelist": Nothing }
 
 
 
 -- | A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
 newtype DashEncryption = DashEncryption 
-  { "KeyRotationIntervalSeconds" :: NullOrUndefined (Int)
+  { "KeyRotationIntervalSeconds" :: Maybe (Int)
   , "SpekeKeyProvider" :: (SpekeKeyProvider)
   }
 derive instance newtypeDashEncryption :: Newtype DashEncryption _
@@ -235,25 +234,25 @@ instance encodeDashEncryption :: Encode DashEncryption where encode = genericEnc
 
 -- | Constructs DashEncryption from required parameters
 newDashEncryption :: SpekeKeyProvider -> DashEncryption
-newDashEncryption _SpekeKeyProvider = DashEncryption { "SpekeKeyProvider": _SpekeKeyProvider, "KeyRotationIntervalSeconds": (NullOrUndefined Nothing) }
+newDashEncryption _SpekeKeyProvider = DashEncryption { "SpekeKeyProvider": _SpekeKeyProvider, "KeyRotationIntervalSeconds": Nothing }
 
 -- | Constructs DashEncryption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDashEncryption' :: SpekeKeyProvider -> ( { "KeyRotationIntervalSeconds" :: NullOrUndefined (Int) , "SpekeKeyProvider" :: (SpekeKeyProvider) } -> {"KeyRotationIntervalSeconds" :: NullOrUndefined (Int) , "SpekeKeyProvider" :: (SpekeKeyProvider) } ) -> DashEncryption
-newDashEncryption' _SpekeKeyProvider customize = (DashEncryption <<< customize) { "SpekeKeyProvider": _SpekeKeyProvider, "KeyRotationIntervalSeconds": (NullOrUndefined Nothing) }
+newDashEncryption' :: SpekeKeyProvider -> ( { "KeyRotationIntervalSeconds" :: Maybe (Int) , "SpekeKeyProvider" :: (SpekeKeyProvider) } -> {"KeyRotationIntervalSeconds" :: Maybe (Int) , "SpekeKeyProvider" :: (SpekeKeyProvider) } ) -> DashEncryption
+newDashEncryption' _SpekeKeyProvider customize = (DashEncryption <<< customize) { "SpekeKeyProvider": _SpekeKeyProvider, "KeyRotationIntervalSeconds": Nothing }
 
 
 
 -- | A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
 newtype DashPackage = DashPackage 
-  { "Encryption" :: NullOrUndefined (DashEncryption)
-  , "ManifestWindowSeconds" :: NullOrUndefined (Int)
-  , "MinBufferTimeSeconds" :: NullOrUndefined (Int)
-  , "MinUpdatePeriodSeconds" :: NullOrUndefined (Int)
-  , "Profile" :: NullOrUndefined (Profile)
-  , "SegmentDurationSeconds" :: NullOrUndefined (Int)
-  , "StreamSelection" :: NullOrUndefined (StreamSelection)
-  , "SuggestedPresentationDelaySeconds" :: NullOrUndefined (Int)
+  { "Encryption" :: Maybe (DashEncryption)
+  , "ManifestWindowSeconds" :: Maybe (Int)
+  , "MinBufferTimeSeconds" :: Maybe (Int)
+  , "MinUpdatePeriodSeconds" :: Maybe (Int)
+  , "Profile" :: Maybe (Profile)
+  , "SegmentDurationSeconds" :: Maybe (Int)
+  , "StreamSelection" :: Maybe (StreamSelection)
+  , "SuggestedPresentationDelaySeconds" :: Maybe (Int)
   }
 derive instance newtypeDashPackage :: Newtype DashPackage _
 derive instance repGenericDashPackage :: Generic DashPackage _
@@ -263,12 +262,12 @@ instance encodeDashPackage :: Encode DashPackage where encode = genericEncode op
 
 -- | Constructs DashPackage from required parameters
 newDashPackage :: DashPackage
-newDashPackage  = DashPackage { "Encryption": (NullOrUndefined Nothing), "ManifestWindowSeconds": (NullOrUndefined Nothing), "MinBufferTimeSeconds": (NullOrUndefined Nothing), "MinUpdatePeriodSeconds": (NullOrUndefined Nothing), "Profile": (NullOrUndefined Nothing), "SegmentDurationSeconds": (NullOrUndefined Nothing), "StreamSelection": (NullOrUndefined Nothing), "SuggestedPresentationDelaySeconds": (NullOrUndefined Nothing) }
+newDashPackage  = DashPackage { "Encryption": Nothing, "ManifestWindowSeconds": Nothing, "MinBufferTimeSeconds": Nothing, "MinUpdatePeriodSeconds": Nothing, "Profile": Nothing, "SegmentDurationSeconds": Nothing, "StreamSelection": Nothing, "SuggestedPresentationDelaySeconds": Nothing }
 
 -- | Constructs DashPackage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDashPackage' :: ( { "Encryption" :: NullOrUndefined (DashEncryption) , "ManifestWindowSeconds" :: NullOrUndefined (Int) , "MinBufferTimeSeconds" :: NullOrUndefined (Int) , "MinUpdatePeriodSeconds" :: NullOrUndefined (Int) , "Profile" :: NullOrUndefined (Profile) , "SegmentDurationSeconds" :: NullOrUndefined (Int) , "StreamSelection" :: NullOrUndefined (StreamSelection) , "SuggestedPresentationDelaySeconds" :: NullOrUndefined (Int) } -> {"Encryption" :: NullOrUndefined (DashEncryption) , "ManifestWindowSeconds" :: NullOrUndefined (Int) , "MinBufferTimeSeconds" :: NullOrUndefined (Int) , "MinUpdatePeriodSeconds" :: NullOrUndefined (Int) , "Profile" :: NullOrUndefined (Profile) , "SegmentDurationSeconds" :: NullOrUndefined (Int) , "StreamSelection" :: NullOrUndefined (StreamSelection) , "SuggestedPresentationDelaySeconds" :: NullOrUndefined (Int) } ) -> DashPackage
-newDashPackage'  customize = (DashPackage <<< customize) { "Encryption": (NullOrUndefined Nothing), "ManifestWindowSeconds": (NullOrUndefined Nothing), "MinBufferTimeSeconds": (NullOrUndefined Nothing), "MinUpdatePeriodSeconds": (NullOrUndefined Nothing), "Profile": (NullOrUndefined Nothing), "SegmentDurationSeconds": (NullOrUndefined Nothing), "StreamSelection": (NullOrUndefined Nothing), "SuggestedPresentationDelaySeconds": (NullOrUndefined Nothing) }
+newDashPackage' :: ( { "Encryption" :: Maybe (DashEncryption) , "ManifestWindowSeconds" :: Maybe (Int) , "MinBufferTimeSeconds" :: Maybe (Int) , "MinUpdatePeriodSeconds" :: Maybe (Int) , "Profile" :: Maybe (Profile) , "SegmentDurationSeconds" :: Maybe (Int) , "StreamSelection" :: Maybe (StreamSelection) , "SuggestedPresentationDelaySeconds" :: Maybe (Int) } -> {"Encryption" :: Maybe (DashEncryption) , "ManifestWindowSeconds" :: Maybe (Int) , "MinBufferTimeSeconds" :: Maybe (Int) , "MinUpdatePeriodSeconds" :: Maybe (Int) , "Profile" :: Maybe (Profile) , "SegmentDurationSeconds" :: Maybe (Int) , "StreamSelection" :: Maybe (StreamSelection) , "SuggestedPresentationDelaySeconds" :: Maybe (Int) } ) -> DashPackage
+newDashPackage'  customize = (DashPackage <<< customize) { "Encryption": Nothing, "ManifestWindowSeconds": Nothing, "MinBufferTimeSeconds": Nothing, "MinUpdatePeriodSeconds": Nothing, "Profile": Nothing, "SegmentDurationSeconds": Nothing, "StreamSelection": Nothing, "SuggestedPresentationDelaySeconds": Nothing }
 
 
 
@@ -351,10 +350,10 @@ newDescribeChannelRequest' _Id customize = (DescribeChannelRequest <<< customize
 
 
 newtype DescribeChannelResponse = DescribeChannelResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsIngest" :: NullOrUndefined (HlsIngest)
-  , "Id" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "HlsIngest" :: Maybe (HlsIngest)
+  , "Id" :: Maybe (String)
   }
 derive instance newtypeDescribeChannelResponse :: Newtype DescribeChannelResponse _
 derive instance repGenericDescribeChannelResponse :: Generic DescribeChannelResponse _
@@ -364,12 +363,12 @@ instance encodeDescribeChannelResponse :: Encode DescribeChannelResponse where e
 
 -- | Constructs DescribeChannelResponse from required parameters
 newDescribeChannelResponse :: DescribeChannelResponse
-newDescribeChannelResponse  = DescribeChannelResponse { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newDescribeChannelResponse  = DescribeChannelResponse { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 -- | Constructs DescribeChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeChannelResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } ) -> DescribeChannelResponse
-newDescribeChannelResponse'  customize = (DescribeChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newDescribeChannelResponse' :: ( { "Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } ) -> DescribeChannelResponse
+newDescribeChannelResponse'  customize = (DescribeChannelResponse <<< customize) { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 
 
@@ -394,18 +393,18 @@ newDescribeOriginEndpointRequest' _Id customize = (DescribeOriginEndpointRequest
 
 
 newtype DescribeOriginEndpointResponse = DescribeOriginEndpointResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "ChannelId" :: NullOrUndefined (String)
-  , "DashPackage" :: NullOrUndefined (DashPackage)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsPackage" :: NullOrUndefined (HlsPackage)
-  , "Id" :: NullOrUndefined (String)
-  , "ManifestName" :: NullOrUndefined (String)
-  , "MssPackage" :: NullOrUndefined (MssPackage)
-  , "StartoverWindowSeconds" :: NullOrUndefined (Int)
-  , "TimeDelaySeconds" :: NullOrUndefined (Int)
-  , "Url" :: NullOrUndefined (String)
-  , "Whitelist" :: NullOrUndefined (ListOf__string)
+  { "Arn" :: Maybe (String)
+  , "ChannelId" :: Maybe (String)
+  , "DashPackage" :: Maybe (DashPackage)
+  , "Description" :: Maybe (String)
+  , "HlsPackage" :: Maybe (HlsPackage)
+  , "Id" :: Maybe (String)
+  , "ManifestName" :: Maybe (String)
+  , "MssPackage" :: Maybe (MssPackage)
+  , "StartoverWindowSeconds" :: Maybe (Int)
+  , "TimeDelaySeconds" :: Maybe (Int)
+  , "Url" :: Maybe (String)
+  , "Whitelist" :: Maybe (ListOf__string)
   }
 derive instance newtypeDescribeOriginEndpointResponse :: Newtype DescribeOriginEndpointResponse _
 derive instance repGenericDescribeOriginEndpointResponse :: Generic DescribeOriginEndpointResponse _
@@ -415,12 +414,12 @@ instance encodeDescribeOriginEndpointResponse :: Encode DescribeOriginEndpointRe
 
 -- | Constructs DescribeOriginEndpointResponse from required parameters
 newDescribeOriginEndpointResponse :: DescribeOriginEndpointResponse
-newDescribeOriginEndpointResponse  = DescribeOriginEndpointResponse { "Arn": (NullOrUndefined Nothing), "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newDescribeOriginEndpointResponse  = DescribeOriginEndpointResponse { "Arn": Nothing, "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Url": Nothing, "Whitelist": Nothing }
 
 -- | Constructs DescribeOriginEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeOriginEndpointResponse' :: ( { "Arn" :: NullOrUndefined (String) , "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Url" :: NullOrUndefined (String) , "Whitelist" :: NullOrUndefined (ListOf__string) } -> {"Arn" :: NullOrUndefined (String) , "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Url" :: NullOrUndefined (String) , "Whitelist" :: NullOrUndefined (ListOf__string) } ) -> DescribeOriginEndpointResponse
-newDescribeOriginEndpointResponse'  customize = (DescribeOriginEndpointResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newDescribeOriginEndpointResponse' :: ( { "Arn" :: Maybe (String) , "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Url" :: Maybe (String) , "Whitelist" :: Maybe (ListOf__string) } -> {"Arn" :: Maybe (String) , "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Url" :: Maybe (String) , "Whitelist" :: Maybe (ListOf__string) } ) -> DescribeOriginEndpointResponse
+newDescribeOriginEndpointResponse'  customize = (DescribeOriginEndpointResponse <<< customize) { "Arn": Nothing, "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Url": Nothing, "Whitelist": Nothing }
 
 
 
@@ -435,7 +434,7 @@ instance encodeEncryptionMethod :: Encode EncryptionMethod where encode = generi
 
 -- | The client is not authorized to access the requested resource.
 newtype ForbiddenException = ForbiddenException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeForbiddenException :: Newtype ForbiddenException _
 derive instance repGenericForbiddenException :: Generic ForbiddenException _
@@ -445,21 +444,21 @@ instance encodeForbiddenException :: Encode ForbiddenException where encode = ge
 
 -- | Constructs ForbiddenException from required parameters
 newForbiddenException :: ForbiddenException
-newForbiddenException  = ForbiddenException { "Message": (NullOrUndefined Nothing) }
+newForbiddenException  = ForbiddenException { "Message": Nothing }
 
 -- | Constructs ForbiddenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newForbiddenException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ForbiddenException
-newForbiddenException'  customize = (ForbiddenException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newForbiddenException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ForbiddenException
+newForbiddenException'  customize = (ForbiddenException <<< customize) { "Message": Nothing }
 
 
 
 -- | An HTTP Live Streaming (HLS) encryption configuration.
 newtype HlsEncryption = HlsEncryption 
-  { "ConstantInitializationVector" :: NullOrUndefined (String)
-  , "EncryptionMethod" :: NullOrUndefined (EncryptionMethod)
-  , "KeyRotationIntervalSeconds" :: NullOrUndefined (Int)
-  , "RepeatExtXKey" :: NullOrUndefined (Boolean)
+  { "ConstantInitializationVector" :: Maybe (String)
+  , "EncryptionMethod" :: Maybe (EncryptionMethod)
+  , "KeyRotationIntervalSeconds" :: Maybe (Int)
+  , "RepeatExtXKey" :: Maybe (Boolean)
   , "SpekeKeyProvider" :: (SpekeKeyProvider)
   }
 derive instance newtypeHlsEncryption :: Newtype HlsEncryption _
@@ -470,18 +469,18 @@ instance encodeHlsEncryption :: Encode HlsEncryption where encode = genericEncod
 
 -- | Constructs HlsEncryption from required parameters
 newHlsEncryption :: SpekeKeyProvider -> HlsEncryption
-newHlsEncryption _SpekeKeyProvider = HlsEncryption { "SpekeKeyProvider": _SpekeKeyProvider, "ConstantInitializationVector": (NullOrUndefined Nothing), "EncryptionMethod": (NullOrUndefined Nothing), "KeyRotationIntervalSeconds": (NullOrUndefined Nothing), "RepeatExtXKey": (NullOrUndefined Nothing) }
+newHlsEncryption _SpekeKeyProvider = HlsEncryption { "SpekeKeyProvider": _SpekeKeyProvider, "ConstantInitializationVector": Nothing, "EncryptionMethod": Nothing, "KeyRotationIntervalSeconds": Nothing, "RepeatExtXKey": Nothing }
 
 -- | Constructs HlsEncryption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsEncryption' :: SpekeKeyProvider -> ( { "ConstantInitializationVector" :: NullOrUndefined (String) , "EncryptionMethod" :: NullOrUndefined (EncryptionMethod) , "KeyRotationIntervalSeconds" :: NullOrUndefined (Int) , "RepeatExtXKey" :: NullOrUndefined (Boolean) , "SpekeKeyProvider" :: (SpekeKeyProvider) } -> {"ConstantInitializationVector" :: NullOrUndefined (String) , "EncryptionMethod" :: NullOrUndefined (EncryptionMethod) , "KeyRotationIntervalSeconds" :: NullOrUndefined (Int) , "RepeatExtXKey" :: NullOrUndefined (Boolean) , "SpekeKeyProvider" :: (SpekeKeyProvider) } ) -> HlsEncryption
-newHlsEncryption' _SpekeKeyProvider customize = (HlsEncryption <<< customize) { "SpekeKeyProvider": _SpekeKeyProvider, "ConstantInitializationVector": (NullOrUndefined Nothing), "EncryptionMethod": (NullOrUndefined Nothing), "KeyRotationIntervalSeconds": (NullOrUndefined Nothing), "RepeatExtXKey": (NullOrUndefined Nothing) }
+newHlsEncryption' :: SpekeKeyProvider -> ( { "ConstantInitializationVector" :: Maybe (String) , "EncryptionMethod" :: Maybe (EncryptionMethod) , "KeyRotationIntervalSeconds" :: Maybe (Int) , "RepeatExtXKey" :: Maybe (Boolean) , "SpekeKeyProvider" :: (SpekeKeyProvider) } -> {"ConstantInitializationVector" :: Maybe (String) , "EncryptionMethod" :: Maybe (EncryptionMethod) , "KeyRotationIntervalSeconds" :: Maybe (Int) , "RepeatExtXKey" :: Maybe (Boolean) , "SpekeKeyProvider" :: (SpekeKeyProvider) } ) -> HlsEncryption
+newHlsEncryption' _SpekeKeyProvider customize = (HlsEncryption <<< customize) { "SpekeKeyProvider": _SpekeKeyProvider, "ConstantInitializationVector": Nothing, "EncryptionMethod": Nothing, "KeyRotationIntervalSeconds": Nothing, "RepeatExtXKey": Nothing }
 
 
 
 -- | An HTTP Live Streaming (HLS) ingest resource configuration.
 newtype HlsIngest = HlsIngest 
-  { "IngestEndpoints" :: NullOrUndefined (ListOfIngestEndpoint)
+  { "IngestEndpoints" :: Maybe (ListOfIngestEndpoint)
   }
 derive instance newtypeHlsIngest :: Newtype HlsIngest _
 derive instance repGenericHlsIngest :: Generic HlsIngest _
@@ -491,26 +490,26 @@ instance encodeHlsIngest :: Encode HlsIngest where encode = genericEncode option
 
 -- | Constructs HlsIngest from required parameters
 newHlsIngest :: HlsIngest
-newHlsIngest  = HlsIngest { "IngestEndpoints": (NullOrUndefined Nothing) }
+newHlsIngest  = HlsIngest { "IngestEndpoints": Nothing }
 
 -- | Constructs HlsIngest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsIngest' :: ( { "IngestEndpoints" :: NullOrUndefined (ListOfIngestEndpoint) } -> {"IngestEndpoints" :: NullOrUndefined (ListOfIngestEndpoint) } ) -> HlsIngest
-newHlsIngest'  customize = (HlsIngest <<< customize) { "IngestEndpoints": (NullOrUndefined Nothing) }
+newHlsIngest' :: ( { "IngestEndpoints" :: Maybe (ListOfIngestEndpoint) } -> {"IngestEndpoints" :: Maybe (ListOfIngestEndpoint) } ) -> HlsIngest
+newHlsIngest'  customize = (HlsIngest <<< customize) { "IngestEndpoints": Nothing }
 
 
 
 -- | An HTTP Live Streaming (HLS) packaging configuration.
 newtype HlsPackage = HlsPackage 
-  { "AdMarkers" :: NullOrUndefined (AdMarkers)
-  , "Encryption" :: NullOrUndefined (HlsEncryption)
-  , "IncludeIframeOnlyStream" :: NullOrUndefined (Boolean)
-  , "PlaylistType" :: NullOrUndefined (PlaylistType)
-  , "PlaylistWindowSeconds" :: NullOrUndefined (Int)
-  , "ProgramDateTimeIntervalSeconds" :: NullOrUndefined (Int)
-  , "SegmentDurationSeconds" :: NullOrUndefined (Int)
-  , "StreamSelection" :: NullOrUndefined (StreamSelection)
-  , "UseAudioRenditionGroup" :: NullOrUndefined (Boolean)
+  { "AdMarkers" :: Maybe (AdMarkers)
+  , "Encryption" :: Maybe (HlsEncryption)
+  , "IncludeIframeOnlyStream" :: Maybe (Boolean)
+  , "PlaylistType" :: Maybe (PlaylistType)
+  , "PlaylistWindowSeconds" :: Maybe (Int)
+  , "ProgramDateTimeIntervalSeconds" :: Maybe (Int)
+  , "SegmentDurationSeconds" :: Maybe (Int)
+  , "StreamSelection" :: Maybe (StreamSelection)
+  , "UseAudioRenditionGroup" :: Maybe (Boolean)
   }
 derive instance newtypeHlsPackage :: Newtype HlsPackage _
 derive instance repGenericHlsPackage :: Generic HlsPackage _
@@ -520,20 +519,20 @@ instance encodeHlsPackage :: Encode HlsPackage where encode = genericEncode opti
 
 -- | Constructs HlsPackage from required parameters
 newHlsPackage :: HlsPackage
-newHlsPackage  = HlsPackage { "AdMarkers": (NullOrUndefined Nothing), "Encryption": (NullOrUndefined Nothing), "IncludeIframeOnlyStream": (NullOrUndefined Nothing), "PlaylistType": (NullOrUndefined Nothing), "PlaylistWindowSeconds": (NullOrUndefined Nothing), "ProgramDateTimeIntervalSeconds": (NullOrUndefined Nothing), "SegmentDurationSeconds": (NullOrUndefined Nothing), "StreamSelection": (NullOrUndefined Nothing), "UseAudioRenditionGroup": (NullOrUndefined Nothing) }
+newHlsPackage  = HlsPackage { "AdMarkers": Nothing, "Encryption": Nothing, "IncludeIframeOnlyStream": Nothing, "PlaylistType": Nothing, "PlaylistWindowSeconds": Nothing, "ProgramDateTimeIntervalSeconds": Nothing, "SegmentDurationSeconds": Nothing, "StreamSelection": Nothing, "UseAudioRenditionGroup": Nothing }
 
 -- | Constructs HlsPackage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsPackage' :: ( { "AdMarkers" :: NullOrUndefined (AdMarkers) , "Encryption" :: NullOrUndefined (HlsEncryption) , "IncludeIframeOnlyStream" :: NullOrUndefined (Boolean) , "PlaylistType" :: NullOrUndefined (PlaylistType) , "PlaylistWindowSeconds" :: NullOrUndefined (Int) , "ProgramDateTimeIntervalSeconds" :: NullOrUndefined (Int) , "SegmentDurationSeconds" :: NullOrUndefined (Int) , "StreamSelection" :: NullOrUndefined (StreamSelection) , "UseAudioRenditionGroup" :: NullOrUndefined (Boolean) } -> {"AdMarkers" :: NullOrUndefined (AdMarkers) , "Encryption" :: NullOrUndefined (HlsEncryption) , "IncludeIframeOnlyStream" :: NullOrUndefined (Boolean) , "PlaylistType" :: NullOrUndefined (PlaylistType) , "PlaylistWindowSeconds" :: NullOrUndefined (Int) , "ProgramDateTimeIntervalSeconds" :: NullOrUndefined (Int) , "SegmentDurationSeconds" :: NullOrUndefined (Int) , "StreamSelection" :: NullOrUndefined (StreamSelection) , "UseAudioRenditionGroup" :: NullOrUndefined (Boolean) } ) -> HlsPackage
-newHlsPackage'  customize = (HlsPackage <<< customize) { "AdMarkers": (NullOrUndefined Nothing), "Encryption": (NullOrUndefined Nothing), "IncludeIframeOnlyStream": (NullOrUndefined Nothing), "PlaylistType": (NullOrUndefined Nothing), "PlaylistWindowSeconds": (NullOrUndefined Nothing), "ProgramDateTimeIntervalSeconds": (NullOrUndefined Nothing), "SegmentDurationSeconds": (NullOrUndefined Nothing), "StreamSelection": (NullOrUndefined Nothing), "UseAudioRenditionGroup": (NullOrUndefined Nothing) }
+newHlsPackage' :: ( { "AdMarkers" :: Maybe (AdMarkers) , "Encryption" :: Maybe (HlsEncryption) , "IncludeIframeOnlyStream" :: Maybe (Boolean) , "PlaylistType" :: Maybe (PlaylistType) , "PlaylistWindowSeconds" :: Maybe (Int) , "ProgramDateTimeIntervalSeconds" :: Maybe (Int) , "SegmentDurationSeconds" :: Maybe (Int) , "StreamSelection" :: Maybe (StreamSelection) , "UseAudioRenditionGroup" :: Maybe (Boolean) } -> {"AdMarkers" :: Maybe (AdMarkers) , "Encryption" :: Maybe (HlsEncryption) , "IncludeIframeOnlyStream" :: Maybe (Boolean) , "PlaylistType" :: Maybe (PlaylistType) , "PlaylistWindowSeconds" :: Maybe (Int) , "ProgramDateTimeIntervalSeconds" :: Maybe (Int) , "SegmentDurationSeconds" :: Maybe (Int) , "StreamSelection" :: Maybe (StreamSelection) , "UseAudioRenditionGroup" :: Maybe (Boolean) } ) -> HlsPackage
+newHlsPackage'  customize = (HlsPackage <<< customize) { "AdMarkers": Nothing, "Encryption": Nothing, "IncludeIframeOnlyStream": Nothing, "PlaylistType": Nothing, "PlaylistWindowSeconds": Nothing, "ProgramDateTimeIntervalSeconds": Nothing, "SegmentDurationSeconds": Nothing, "StreamSelection": Nothing, "UseAudioRenditionGroup": Nothing }
 
 
 
 -- | An endpoint for ingesting source content for a Channel.
 newtype IngestEndpoint = IngestEndpoint 
-  { "Password" :: NullOrUndefined (String)
-  , "Url" :: NullOrUndefined (String)
-  , "Username" :: NullOrUndefined (String)
+  { "Password" :: Maybe (String)
+  , "Url" :: Maybe (String)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeIngestEndpoint :: Newtype IngestEndpoint _
 derive instance repGenericIngestEndpoint :: Generic IngestEndpoint _
@@ -543,18 +542,18 @@ instance encodeIngestEndpoint :: Encode IngestEndpoint where encode = genericEnc
 
 -- | Constructs IngestEndpoint from required parameters
 newIngestEndpoint :: IngestEndpoint
-newIngestEndpoint  = IngestEndpoint { "Password": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newIngestEndpoint  = IngestEndpoint { "Password": Nothing, "Url": Nothing, "Username": Nothing }
 
 -- | Constructs IngestEndpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIngestEndpoint' :: ( { "Password" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } -> {"Password" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } ) -> IngestEndpoint
-newIngestEndpoint'  customize = (IngestEndpoint <<< customize) { "Password": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newIngestEndpoint' :: ( { "Password" :: Maybe (String) , "Url" :: Maybe (String) , "Username" :: Maybe (String) } -> {"Password" :: Maybe (String) , "Url" :: Maybe (String) , "Username" :: Maybe (String) } ) -> IngestEndpoint
+newIngestEndpoint'  customize = (IngestEndpoint <<< customize) { "Password": Nothing, "Url": Nothing, "Username": Nothing }
 
 
 
 -- | An unexpected error occurred.
 newtype InternalServerErrorException = InternalServerErrorException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInternalServerErrorException :: Newtype InternalServerErrorException _
 derive instance repGenericInternalServerErrorException :: Generic InternalServerErrorException _
@@ -564,18 +563,18 @@ instance encodeInternalServerErrorException :: Encode InternalServerErrorExcepti
 
 -- | Constructs InternalServerErrorException from required parameters
 newInternalServerErrorException :: InternalServerErrorException
-newInternalServerErrorException  = InternalServerErrorException { "Message": (NullOrUndefined Nothing) }
+newInternalServerErrorException  = InternalServerErrorException { "Message": Nothing }
 
 -- | Constructs InternalServerErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServerErrorException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InternalServerErrorException
-newInternalServerErrorException'  customize = (InternalServerErrorException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalServerErrorException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InternalServerErrorException
+newInternalServerErrorException'  customize = (InternalServerErrorException <<< customize) { "Message": Nothing }
 
 
 
 newtype ListChannelsRequest = ListChannelsRequest 
-  { "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListChannelsRequest :: Newtype ListChannelsRequest _
 derive instance repGenericListChannelsRequest :: Generic ListChannelsRequest _
@@ -585,18 +584,18 @@ instance encodeListChannelsRequest :: Encode ListChannelsRequest where encode = 
 
 -- | Constructs ListChannelsRequest from required parameters
 newListChannelsRequest :: ListChannelsRequest
-newListChannelsRequest  = ListChannelsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsRequest  = ListChannelsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListChannelsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListChannelsRequest' :: ( { "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListChannelsRequest
-newListChannelsRequest'  customize = (ListChannelsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsRequest' :: ( { "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListChannelsRequest
+newListChannelsRequest'  customize = (ListChannelsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListChannelsResponse = ListChannelsResponse 
-  { "Channels" :: NullOrUndefined (ListOfChannel)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Channels" :: Maybe (ListOfChannel)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListChannelsResponse :: Newtype ListChannelsResponse _
 derive instance repGenericListChannelsResponse :: Generic ListChannelsResponse _
@@ -606,12 +605,12 @@ instance encodeListChannelsResponse :: Encode ListChannelsResponse where encode 
 
 -- | Constructs ListChannelsResponse from required parameters
 newListChannelsResponse :: ListChannelsResponse
-newListChannelsResponse  = ListChannelsResponse { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsResponse  = ListChannelsResponse { "Channels": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListChannelsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListChannelsResponse' :: ( { "Channels" :: NullOrUndefined (ListOfChannel) , "NextToken" :: NullOrUndefined (String) } -> {"Channels" :: NullOrUndefined (ListOfChannel) , "NextToken" :: NullOrUndefined (String) } ) -> ListChannelsResponse
-newListChannelsResponse'  customize = (ListChannelsResponse <<< customize) { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsResponse' :: ( { "Channels" :: Maybe (ListOfChannel) , "NextToken" :: Maybe (String) } -> {"Channels" :: Maybe (ListOfChannel) , "NextToken" :: Maybe (String) } ) -> ListChannelsResponse
+newListChannelsResponse'  customize = (ListChannelsResponse <<< customize) { "Channels": Nothing, "NextToken": Nothing }
 
 
 
@@ -652,9 +651,9 @@ instance encodeListOf__string :: Encode ListOf__string where encode = genericEnc
 
 
 newtype ListOriginEndpointsRequest = ListOriginEndpointsRequest 
-  { "ChannelId" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  { "ChannelId" :: Maybe (String)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListOriginEndpointsRequest :: Newtype ListOriginEndpointsRequest _
 derive instance repGenericListOriginEndpointsRequest :: Generic ListOriginEndpointsRequest _
@@ -664,18 +663,18 @@ instance encodeListOriginEndpointsRequest :: Encode ListOriginEndpointsRequest w
 
 -- | Constructs ListOriginEndpointsRequest from required parameters
 newListOriginEndpointsRequest :: ListOriginEndpointsRequest
-newListOriginEndpointsRequest  = ListOriginEndpointsRequest { "ChannelId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListOriginEndpointsRequest  = ListOriginEndpointsRequest { "ChannelId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListOriginEndpointsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListOriginEndpointsRequest' :: ( { "ChannelId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"ChannelId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListOriginEndpointsRequest
-newListOriginEndpointsRequest'  customize = (ListOriginEndpointsRequest <<< customize) { "ChannelId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListOriginEndpointsRequest' :: ( { "ChannelId" :: Maybe (String) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"ChannelId" :: Maybe (String) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListOriginEndpointsRequest
+newListOriginEndpointsRequest'  customize = (ListOriginEndpointsRequest <<< customize) { "ChannelId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListOriginEndpointsResponse = ListOriginEndpointsResponse 
-  { "NextToken" :: NullOrUndefined (String)
-  , "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint)
+  { "NextToken" :: Maybe (String)
+  , "OriginEndpoints" :: Maybe (ListOfOriginEndpoint)
   }
 derive instance newtypeListOriginEndpointsResponse :: Newtype ListOriginEndpointsResponse _
 derive instance repGenericListOriginEndpointsResponse :: Generic ListOriginEndpointsResponse _
@@ -685,12 +684,12 @@ instance encodeListOriginEndpointsResponse :: Encode ListOriginEndpointsResponse
 
 -- | Constructs ListOriginEndpointsResponse from required parameters
 newListOriginEndpointsResponse :: ListOriginEndpointsResponse
-newListOriginEndpointsResponse  = ListOriginEndpointsResponse { "NextToken": (NullOrUndefined Nothing), "OriginEndpoints": (NullOrUndefined Nothing) }
+newListOriginEndpointsResponse  = ListOriginEndpointsResponse { "NextToken": Nothing, "OriginEndpoints": Nothing }
 
 -- | Constructs ListOriginEndpointsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListOriginEndpointsResponse' :: ( { "NextToken" :: NullOrUndefined (String) , "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) } -> {"NextToken" :: NullOrUndefined (String) , "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) } ) -> ListOriginEndpointsResponse
-newListOriginEndpointsResponse'  customize = (ListOriginEndpointsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "OriginEndpoints": (NullOrUndefined Nothing) }
+newListOriginEndpointsResponse' :: ( { "NextToken" :: Maybe (String) , "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) } -> {"NextToken" :: Maybe (String) , "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) } ) -> ListOriginEndpointsResponse
+newListOriginEndpointsResponse'  customize = (ListOriginEndpointsResponse <<< customize) { "NextToken": Nothing, "OriginEndpoints": Nothing }
 
 
 
@@ -726,10 +725,10 @@ newMssEncryption' _SpekeKeyProvider customize = (MssEncryption <<< customize) { 
 
 -- | A Microsoft Smooth Streaming (MSS) packaging configuration.
 newtype MssPackage = MssPackage 
-  { "Encryption" :: NullOrUndefined (MssEncryption)
-  , "ManifestWindowSeconds" :: NullOrUndefined (Int)
-  , "SegmentDurationSeconds" :: NullOrUndefined (Int)
-  , "StreamSelection" :: NullOrUndefined (StreamSelection)
+  { "Encryption" :: Maybe (MssEncryption)
+  , "ManifestWindowSeconds" :: Maybe (Int)
+  , "SegmentDurationSeconds" :: Maybe (Int)
+  , "StreamSelection" :: Maybe (StreamSelection)
   }
 derive instance newtypeMssPackage :: Newtype MssPackage _
 derive instance repGenericMssPackage :: Generic MssPackage _
@@ -739,18 +738,18 @@ instance encodeMssPackage :: Encode MssPackage where encode = genericEncode opti
 
 -- | Constructs MssPackage from required parameters
 newMssPackage :: MssPackage
-newMssPackage  = MssPackage { "Encryption": (NullOrUndefined Nothing), "ManifestWindowSeconds": (NullOrUndefined Nothing), "SegmentDurationSeconds": (NullOrUndefined Nothing), "StreamSelection": (NullOrUndefined Nothing) }
+newMssPackage  = MssPackage { "Encryption": Nothing, "ManifestWindowSeconds": Nothing, "SegmentDurationSeconds": Nothing, "StreamSelection": Nothing }
 
 -- | Constructs MssPackage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMssPackage' :: ( { "Encryption" :: NullOrUndefined (MssEncryption) , "ManifestWindowSeconds" :: NullOrUndefined (Int) , "SegmentDurationSeconds" :: NullOrUndefined (Int) , "StreamSelection" :: NullOrUndefined (StreamSelection) } -> {"Encryption" :: NullOrUndefined (MssEncryption) , "ManifestWindowSeconds" :: NullOrUndefined (Int) , "SegmentDurationSeconds" :: NullOrUndefined (Int) , "StreamSelection" :: NullOrUndefined (StreamSelection) } ) -> MssPackage
-newMssPackage'  customize = (MssPackage <<< customize) { "Encryption": (NullOrUndefined Nothing), "ManifestWindowSeconds": (NullOrUndefined Nothing), "SegmentDurationSeconds": (NullOrUndefined Nothing), "StreamSelection": (NullOrUndefined Nothing) }
+newMssPackage' :: ( { "Encryption" :: Maybe (MssEncryption) , "ManifestWindowSeconds" :: Maybe (Int) , "SegmentDurationSeconds" :: Maybe (Int) , "StreamSelection" :: Maybe (StreamSelection) } -> {"Encryption" :: Maybe (MssEncryption) , "ManifestWindowSeconds" :: Maybe (Int) , "SegmentDurationSeconds" :: Maybe (Int) , "StreamSelection" :: Maybe (StreamSelection) } ) -> MssPackage
+newMssPackage'  customize = (MssPackage <<< customize) { "Encryption": Nothing, "ManifestWindowSeconds": Nothing, "SegmentDurationSeconds": Nothing, "StreamSelection": Nothing }
 
 
 
 -- | The requested resource does not exist.
 newtype NotFoundException = NotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeNotFoundException :: Newtype NotFoundException _
 derive instance repGenericNotFoundException :: Generic NotFoundException _
@@ -760,29 +759,29 @@ instance encodeNotFoundException :: Encode NotFoundException where encode = gene
 
 -- | Constructs NotFoundException from required parameters
 newNotFoundException :: NotFoundException
-newNotFoundException  = NotFoundException { "Message": (NullOrUndefined Nothing) }
+newNotFoundException  = NotFoundException { "Message": Nothing }
 
 -- | Constructs NotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> NotFoundException
-newNotFoundException'  customize = (NotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> NotFoundException
+newNotFoundException'  customize = (NotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | An OriginEndpoint resource configuration.
 newtype OriginEndpoint = OriginEndpoint 
-  { "Arn" :: NullOrUndefined (String)
-  , "ChannelId" :: NullOrUndefined (String)
-  , "DashPackage" :: NullOrUndefined (DashPackage)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsPackage" :: NullOrUndefined (HlsPackage)
-  , "Id" :: NullOrUndefined (String)
-  , "ManifestName" :: NullOrUndefined (String)
-  , "MssPackage" :: NullOrUndefined (MssPackage)
-  , "StartoverWindowSeconds" :: NullOrUndefined (Int)
-  , "TimeDelaySeconds" :: NullOrUndefined (Int)
-  , "Url" :: NullOrUndefined (String)
-  , "Whitelist" :: NullOrUndefined (ListOf__string)
+  { "Arn" :: Maybe (String)
+  , "ChannelId" :: Maybe (String)
+  , "DashPackage" :: Maybe (DashPackage)
+  , "Description" :: Maybe (String)
+  , "HlsPackage" :: Maybe (HlsPackage)
+  , "Id" :: Maybe (String)
+  , "ManifestName" :: Maybe (String)
+  , "MssPackage" :: Maybe (MssPackage)
+  , "StartoverWindowSeconds" :: Maybe (Int)
+  , "TimeDelaySeconds" :: Maybe (Int)
+  , "Url" :: Maybe (String)
+  , "Whitelist" :: Maybe (ListOf__string)
   }
 derive instance newtypeOriginEndpoint :: Newtype OriginEndpoint _
 derive instance repGenericOriginEndpoint :: Generic OriginEndpoint _
@@ -792,27 +791,27 @@ instance encodeOriginEndpoint :: Encode OriginEndpoint where encode = genericEnc
 
 -- | Constructs OriginEndpoint from required parameters
 newOriginEndpoint :: OriginEndpoint
-newOriginEndpoint  = OriginEndpoint { "Arn": (NullOrUndefined Nothing), "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newOriginEndpoint  = OriginEndpoint { "Arn": Nothing, "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Url": Nothing, "Whitelist": Nothing }
 
 -- | Constructs OriginEndpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOriginEndpoint' :: ( { "Arn" :: NullOrUndefined (String) , "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Url" :: NullOrUndefined (String) , "Whitelist" :: NullOrUndefined (ListOf__string) } -> {"Arn" :: NullOrUndefined (String) , "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Url" :: NullOrUndefined (String) , "Whitelist" :: NullOrUndefined (ListOf__string) } ) -> OriginEndpoint
-newOriginEndpoint'  customize = (OriginEndpoint <<< customize) { "Arn": (NullOrUndefined Nothing), "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newOriginEndpoint' :: ( { "Arn" :: Maybe (String) , "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Url" :: Maybe (String) , "Whitelist" :: Maybe (ListOf__string) } -> {"Arn" :: Maybe (String) , "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Url" :: Maybe (String) , "Whitelist" :: Maybe (ListOf__string) } ) -> OriginEndpoint
+newOriginEndpoint'  customize = (OriginEndpoint <<< customize) { "Arn": Nothing, "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Url": Nothing, "Whitelist": Nothing }
 
 
 
 -- | Configuration parameters for a new OriginEndpoint.
 newtype OriginEndpointCreateParameters = OriginEndpointCreateParameters 
-  { "ChannelId" :: NullOrUndefined (String)
-  , "DashPackage" :: NullOrUndefined (DashPackage)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsPackage" :: NullOrUndefined (HlsPackage)
-  , "Id" :: NullOrUndefined (String)
-  , "ManifestName" :: NullOrUndefined (String)
-  , "MssPackage" :: NullOrUndefined (MssPackage)
-  , "StartoverWindowSeconds" :: NullOrUndefined (Int)
-  , "TimeDelaySeconds" :: NullOrUndefined (Int)
-  , "Whitelist" :: NullOrUndefined (ListOf__string)
+  { "ChannelId" :: Maybe (String)
+  , "DashPackage" :: Maybe (DashPackage)
+  , "Description" :: Maybe (String)
+  , "HlsPackage" :: Maybe (HlsPackage)
+  , "Id" :: Maybe (String)
+  , "ManifestName" :: Maybe (String)
+  , "MssPackage" :: Maybe (MssPackage)
+  , "StartoverWindowSeconds" :: Maybe (Int)
+  , "TimeDelaySeconds" :: Maybe (Int)
+  , "Whitelist" :: Maybe (ListOf__string)
   }
 derive instance newtypeOriginEndpointCreateParameters :: Newtype OriginEndpointCreateParameters _
 derive instance repGenericOriginEndpointCreateParameters :: Generic OriginEndpointCreateParameters _
@@ -822,19 +821,19 @@ instance encodeOriginEndpointCreateParameters :: Encode OriginEndpointCreatePara
 
 -- | Constructs OriginEndpointCreateParameters from required parameters
 newOriginEndpointCreateParameters :: OriginEndpointCreateParameters
-newOriginEndpointCreateParameters  = OriginEndpointCreateParameters { "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newOriginEndpointCreateParameters  = OriginEndpointCreateParameters { "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Whitelist": Nothing }
 
 -- | Constructs OriginEndpointCreateParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOriginEndpointCreateParameters' :: ( { "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Whitelist" :: NullOrUndefined (ListOf__string) } -> {"ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Whitelist" :: NullOrUndefined (ListOf__string) } ) -> OriginEndpointCreateParameters
-newOriginEndpointCreateParameters'  customize = (OriginEndpointCreateParameters <<< customize) { "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newOriginEndpointCreateParameters' :: ( { "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Whitelist" :: Maybe (ListOf__string) } -> {"ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Whitelist" :: Maybe (ListOf__string) } ) -> OriginEndpointCreateParameters
+newOriginEndpointCreateParameters'  customize = (OriginEndpointCreateParameters <<< customize) { "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Whitelist": Nothing }
 
 
 
 -- | A collection of OriginEndpoint records.
 newtype OriginEndpointList = OriginEndpointList 
-  { "NextToken" :: NullOrUndefined (String)
-  , "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint)
+  { "NextToken" :: Maybe (String)
+  , "OriginEndpoints" :: Maybe (ListOfOriginEndpoint)
   }
 derive instance newtypeOriginEndpointList :: Newtype OriginEndpointList _
 derive instance repGenericOriginEndpointList :: Generic OriginEndpointList _
@@ -844,25 +843,25 @@ instance encodeOriginEndpointList :: Encode OriginEndpointList where encode = ge
 
 -- | Constructs OriginEndpointList from required parameters
 newOriginEndpointList :: OriginEndpointList
-newOriginEndpointList  = OriginEndpointList { "NextToken": (NullOrUndefined Nothing), "OriginEndpoints": (NullOrUndefined Nothing) }
+newOriginEndpointList  = OriginEndpointList { "NextToken": Nothing, "OriginEndpoints": Nothing }
 
 -- | Constructs OriginEndpointList's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOriginEndpointList' :: ( { "NextToken" :: NullOrUndefined (String) , "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) } -> {"NextToken" :: NullOrUndefined (String) , "OriginEndpoints" :: NullOrUndefined (ListOfOriginEndpoint) } ) -> OriginEndpointList
-newOriginEndpointList'  customize = (OriginEndpointList <<< customize) { "NextToken": (NullOrUndefined Nothing), "OriginEndpoints": (NullOrUndefined Nothing) }
+newOriginEndpointList' :: ( { "NextToken" :: Maybe (String) , "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) } -> {"NextToken" :: Maybe (String) , "OriginEndpoints" :: Maybe (ListOfOriginEndpoint) } ) -> OriginEndpointList
+newOriginEndpointList'  customize = (OriginEndpointList <<< customize) { "NextToken": Nothing, "OriginEndpoints": Nothing }
 
 
 
 -- | Configuration parameters for updating an existing OriginEndpoint.
 newtype OriginEndpointUpdateParameters = OriginEndpointUpdateParameters 
-  { "DashPackage" :: NullOrUndefined (DashPackage)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsPackage" :: NullOrUndefined (HlsPackage)
-  , "ManifestName" :: NullOrUndefined (String)
-  , "MssPackage" :: NullOrUndefined (MssPackage)
-  , "StartoverWindowSeconds" :: NullOrUndefined (Int)
-  , "TimeDelaySeconds" :: NullOrUndefined (Int)
-  , "Whitelist" :: NullOrUndefined (ListOf__string)
+  { "DashPackage" :: Maybe (DashPackage)
+  , "Description" :: Maybe (String)
+  , "HlsPackage" :: Maybe (HlsPackage)
+  , "ManifestName" :: Maybe (String)
+  , "MssPackage" :: Maybe (MssPackage)
+  , "StartoverWindowSeconds" :: Maybe (Int)
+  , "TimeDelaySeconds" :: Maybe (Int)
+  , "Whitelist" :: Maybe (ListOf__string)
   }
 derive instance newtypeOriginEndpointUpdateParameters :: Newtype OriginEndpointUpdateParameters _
 derive instance repGenericOriginEndpointUpdateParameters :: Generic OriginEndpointUpdateParameters _
@@ -872,12 +871,12 @@ instance encodeOriginEndpointUpdateParameters :: Encode OriginEndpointUpdatePara
 
 -- | Constructs OriginEndpointUpdateParameters from required parameters
 newOriginEndpointUpdateParameters :: OriginEndpointUpdateParameters
-newOriginEndpointUpdateParameters  = OriginEndpointUpdateParameters { "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newOriginEndpointUpdateParameters  = OriginEndpointUpdateParameters { "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Whitelist": Nothing }
 
 -- | Constructs OriginEndpointUpdateParameters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOriginEndpointUpdateParameters' :: ( { "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Whitelist" :: NullOrUndefined (ListOf__string) } -> {"DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Whitelist" :: NullOrUndefined (ListOf__string) } ) -> OriginEndpointUpdateParameters
-newOriginEndpointUpdateParameters'  customize = (OriginEndpointUpdateParameters <<< customize) { "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newOriginEndpointUpdateParameters' :: ( { "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Whitelist" :: Maybe (ListOf__string) } -> {"DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Whitelist" :: Maybe (ListOf__string) } ) -> OriginEndpointUpdateParameters
+newOriginEndpointUpdateParameters'  customize = (OriginEndpointUpdateParameters <<< customize) { "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Whitelist": Nothing }
 
 
 
@@ -920,10 +919,10 @@ newRotateChannelCredentialsRequest' _Id customize = (RotateChannelCredentialsReq
 
 
 newtype RotateChannelCredentialsResponse = RotateChannelCredentialsResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsIngest" :: NullOrUndefined (HlsIngest)
-  , "Id" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "HlsIngest" :: Maybe (HlsIngest)
+  , "Id" :: Maybe (String)
   }
 derive instance newtypeRotateChannelCredentialsResponse :: Newtype RotateChannelCredentialsResponse _
 derive instance repGenericRotateChannelCredentialsResponse :: Generic RotateChannelCredentialsResponse _
@@ -933,18 +932,18 @@ instance encodeRotateChannelCredentialsResponse :: Encode RotateChannelCredentia
 
 -- | Constructs RotateChannelCredentialsResponse from required parameters
 newRotateChannelCredentialsResponse :: RotateChannelCredentialsResponse
-newRotateChannelCredentialsResponse  = RotateChannelCredentialsResponse { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newRotateChannelCredentialsResponse  = RotateChannelCredentialsResponse { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 -- | Constructs RotateChannelCredentialsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRotateChannelCredentialsResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } ) -> RotateChannelCredentialsResponse
-newRotateChannelCredentialsResponse'  customize = (RotateChannelCredentialsResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newRotateChannelCredentialsResponse' :: ( { "Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } ) -> RotateChannelCredentialsResponse
+newRotateChannelCredentialsResponse'  customize = (RotateChannelCredentialsResponse <<< customize) { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 
 
 -- | An unexpected error occurred.
 newtype ServiceUnavailableException = ServiceUnavailableException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeServiceUnavailableException :: Newtype ServiceUnavailableException _
 derive instance repGenericServiceUnavailableException :: Generic ServiceUnavailableException _
@@ -954,12 +953,12 @@ instance encodeServiceUnavailableException :: Encode ServiceUnavailableException
 
 -- | Constructs ServiceUnavailableException from required parameters
 newServiceUnavailableException :: ServiceUnavailableException
-newServiceUnavailableException  = ServiceUnavailableException { "Message": (NullOrUndefined Nothing) }
+newServiceUnavailableException  = ServiceUnavailableException { "Message": Nothing }
 
 -- | Constructs ServiceUnavailableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServiceUnavailableException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ServiceUnavailableException
-newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newServiceUnavailableException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ServiceUnavailableException
+newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "Message": Nothing }
 
 
 
@@ -998,9 +997,9 @@ instance encodeStreamOrder :: Encode StreamOrder where encode = genericEncode op
 
 -- | A StreamSelection configuration.
 newtype StreamSelection = StreamSelection 
-  { "MaxVideoBitsPerSecond" :: NullOrUndefined (Int)
-  , "MinVideoBitsPerSecond" :: NullOrUndefined (Int)
-  , "StreamOrder" :: NullOrUndefined (StreamOrder)
+  { "MaxVideoBitsPerSecond" :: Maybe (Int)
+  , "MinVideoBitsPerSecond" :: Maybe (Int)
+  , "StreamOrder" :: Maybe (StreamOrder)
   }
 derive instance newtypeStreamSelection :: Newtype StreamSelection _
 derive instance repGenericStreamSelection :: Generic StreamSelection _
@@ -1010,18 +1009,18 @@ instance encodeStreamSelection :: Encode StreamSelection where encode = genericE
 
 -- | Constructs StreamSelection from required parameters
 newStreamSelection :: StreamSelection
-newStreamSelection  = StreamSelection { "MaxVideoBitsPerSecond": (NullOrUndefined Nothing), "MinVideoBitsPerSecond": (NullOrUndefined Nothing), "StreamOrder": (NullOrUndefined Nothing) }
+newStreamSelection  = StreamSelection { "MaxVideoBitsPerSecond": Nothing, "MinVideoBitsPerSecond": Nothing, "StreamOrder": Nothing }
 
 -- | Constructs StreamSelection's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStreamSelection' :: ( { "MaxVideoBitsPerSecond" :: NullOrUndefined (Int) , "MinVideoBitsPerSecond" :: NullOrUndefined (Int) , "StreamOrder" :: NullOrUndefined (StreamOrder) } -> {"MaxVideoBitsPerSecond" :: NullOrUndefined (Int) , "MinVideoBitsPerSecond" :: NullOrUndefined (Int) , "StreamOrder" :: NullOrUndefined (StreamOrder) } ) -> StreamSelection
-newStreamSelection'  customize = (StreamSelection <<< customize) { "MaxVideoBitsPerSecond": (NullOrUndefined Nothing), "MinVideoBitsPerSecond": (NullOrUndefined Nothing), "StreamOrder": (NullOrUndefined Nothing) }
+newStreamSelection' :: ( { "MaxVideoBitsPerSecond" :: Maybe (Int) , "MinVideoBitsPerSecond" :: Maybe (Int) , "StreamOrder" :: Maybe (StreamOrder) } -> {"MaxVideoBitsPerSecond" :: Maybe (Int) , "MinVideoBitsPerSecond" :: Maybe (Int) , "StreamOrder" :: Maybe (StreamOrder) } ) -> StreamSelection
+newStreamSelection'  customize = (StreamSelection <<< customize) { "MaxVideoBitsPerSecond": Nothing, "MinVideoBitsPerSecond": Nothing, "StreamOrder": Nothing }
 
 
 
 -- | The client has exceeded their resource or throttling limits.
 newtype TooManyRequestsException = TooManyRequestsException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeTooManyRequestsException :: Newtype TooManyRequestsException _
 derive instance repGenericTooManyRequestsException :: Generic TooManyRequestsException _
@@ -1031,18 +1030,18 @@ instance encodeTooManyRequestsException :: Encode TooManyRequestsException where
 
 -- | Constructs TooManyRequestsException from required parameters
 newTooManyRequestsException :: TooManyRequestsException
-newTooManyRequestsException  = TooManyRequestsException { "Message": (NullOrUndefined Nothing) }
+newTooManyRequestsException  = TooManyRequestsException { "Message": Nothing }
 
 -- | Constructs TooManyRequestsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTooManyRequestsException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> TooManyRequestsException
-newTooManyRequestsException'  customize = (TooManyRequestsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newTooManyRequestsException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> TooManyRequestsException
+newTooManyRequestsException'  customize = (TooManyRequestsException <<< customize) { "Message": Nothing }
 
 
 
 -- | The parameters sent in the request are not valid.
 newtype UnprocessableEntityException = UnprocessableEntityException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeUnprocessableEntityException :: Newtype UnprocessableEntityException _
 derive instance repGenericUnprocessableEntityException :: Generic UnprocessableEntityException _
@@ -1052,18 +1051,18 @@ instance encodeUnprocessableEntityException :: Encode UnprocessableEntityExcepti
 
 -- | Constructs UnprocessableEntityException from required parameters
 newUnprocessableEntityException :: UnprocessableEntityException
-newUnprocessableEntityException  = UnprocessableEntityException { "Message": (NullOrUndefined Nothing) }
+newUnprocessableEntityException  = UnprocessableEntityException { "Message": Nothing }
 
 -- | Constructs UnprocessableEntityException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnprocessableEntityException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> UnprocessableEntityException
-newUnprocessableEntityException'  customize = (UnprocessableEntityException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newUnprocessableEntityException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> UnprocessableEntityException
+newUnprocessableEntityException'  customize = (UnprocessableEntityException <<< customize) { "Message": Nothing }
 
 
 
 -- | Configuration parameters used to update the Channel.
 newtype UpdateChannelRequest = UpdateChannelRequest 
-  { "Description" :: NullOrUndefined (String)
+  { "Description" :: Maybe (String)
   , "Id" :: (String)
   }
 derive instance newtypeUpdateChannelRequest :: Newtype UpdateChannelRequest _
@@ -1074,20 +1073,20 @@ instance encodeUpdateChannelRequest :: Encode UpdateChannelRequest where encode 
 
 -- | Constructs UpdateChannelRequest from required parameters
 newUpdateChannelRequest :: String -> UpdateChannelRequest
-newUpdateChannelRequest _Id = UpdateChannelRequest { "Id": _Id, "Description": (NullOrUndefined Nothing) }
+newUpdateChannelRequest _Id = UpdateChannelRequest { "Id": _Id, "Description": Nothing }
 
 -- | Constructs UpdateChannelRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateChannelRequest' :: String -> ( { "Description" :: NullOrUndefined (String) , "Id" :: (String) } -> {"Description" :: NullOrUndefined (String) , "Id" :: (String) } ) -> UpdateChannelRequest
-newUpdateChannelRequest' _Id customize = (UpdateChannelRequest <<< customize) { "Id": _Id, "Description": (NullOrUndefined Nothing) }
+newUpdateChannelRequest' :: String -> ( { "Description" :: Maybe (String) , "Id" :: (String) } -> {"Description" :: Maybe (String) , "Id" :: (String) } ) -> UpdateChannelRequest
+newUpdateChannelRequest' _Id customize = (UpdateChannelRequest <<< customize) { "Id": _Id, "Description": Nothing }
 
 
 
 newtype UpdateChannelResponse = UpdateChannelResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsIngest" :: NullOrUndefined (HlsIngest)
-  , "Id" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "HlsIngest" :: Maybe (HlsIngest)
+  , "Id" :: Maybe (String)
   }
 derive instance newtypeUpdateChannelResponse :: Newtype UpdateChannelResponse _
 derive instance repGenericUpdateChannelResponse :: Generic UpdateChannelResponse _
@@ -1097,26 +1096,26 @@ instance encodeUpdateChannelResponse :: Encode UpdateChannelResponse where encod
 
 -- | Constructs UpdateChannelResponse from required parameters
 newUpdateChannelResponse :: UpdateChannelResponse
-newUpdateChannelResponse  = UpdateChannelResponse { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newUpdateChannelResponse  = UpdateChannelResponse { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 -- | Constructs UpdateChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateChannelResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "HlsIngest" :: NullOrUndefined (HlsIngest) , "Id" :: NullOrUndefined (String) } ) -> UpdateChannelResponse
-newUpdateChannelResponse'  customize = (UpdateChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsIngest": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newUpdateChannelResponse' :: ( { "Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Description" :: Maybe (String) , "HlsIngest" :: Maybe (HlsIngest) , "Id" :: Maybe (String) } ) -> UpdateChannelResponse
+newUpdateChannelResponse'  customize = (UpdateChannelResponse <<< customize) { "Arn": Nothing, "Description": Nothing, "HlsIngest": Nothing, "Id": Nothing }
 
 
 
 -- | Configuration parameters used to update an existing OriginEndpoint.
 newtype UpdateOriginEndpointRequest = UpdateOriginEndpointRequest 
-  { "DashPackage" :: NullOrUndefined (DashPackage)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsPackage" :: NullOrUndefined (HlsPackage)
+  { "DashPackage" :: Maybe (DashPackage)
+  , "Description" :: Maybe (String)
+  , "HlsPackage" :: Maybe (HlsPackage)
   , "Id" :: (String)
-  , "ManifestName" :: NullOrUndefined (String)
-  , "MssPackage" :: NullOrUndefined (MssPackage)
-  , "StartoverWindowSeconds" :: NullOrUndefined (Int)
-  , "TimeDelaySeconds" :: NullOrUndefined (Int)
-  , "Whitelist" :: NullOrUndefined (ListOf__string)
+  , "ManifestName" :: Maybe (String)
+  , "MssPackage" :: Maybe (MssPackage)
+  , "StartoverWindowSeconds" :: Maybe (Int)
+  , "TimeDelaySeconds" :: Maybe (Int)
+  , "Whitelist" :: Maybe (ListOf__string)
   }
 derive instance newtypeUpdateOriginEndpointRequest :: Newtype UpdateOriginEndpointRequest _
 derive instance repGenericUpdateOriginEndpointRequest :: Generic UpdateOriginEndpointRequest _
@@ -1126,28 +1125,28 @@ instance encodeUpdateOriginEndpointRequest :: Encode UpdateOriginEndpointRequest
 
 -- | Constructs UpdateOriginEndpointRequest from required parameters
 newUpdateOriginEndpointRequest :: String -> UpdateOriginEndpointRequest
-newUpdateOriginEndpointRequest _Id = UpdateOriginEndpointRequest { "Id": _Id, "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newUpdateOriginEndpointRequest _Id = UpdateOriginEndpointRequest { "Id": _Id, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Whitelist": Nothing }
 
 -- | Constructs UpdateOriginEndpointRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateOriginEndpointRequest' :: String -> ( { "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Whitelist" :: NullOrUndefined (ListOf__string) } -> {"DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Whitelist" :: NullOrUndefined (ListOf__string) } ) -> UpdateOriginEndpointRequest
-newUpdateOriginEndpointRequest' _Id customize = (UpdateOriginEndpointRequest <<< customize) { "Id": _Id, "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newUpdateOriginEndpointRequest' :: String -> ( { "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Whitelist" :: Maybe (ListOf__string) } -> {"DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Whitelist" :: Maybe (ListOf__string) } ) -> UpdateOriginEndpointRequest
+newUpdateOriginEndpointRequest' _Id customize = (UpdateOriginEndpointRequest <<< customize) { "Id": _Id, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Whitelist": Nothing }
 
 
 
 newtype UpdateOriginEndpointResponse = UpdateOriginEndpointResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "ChannelId" :: NullOrUndefined (String)
-  , "DashPackage" :: NullOrUndefined (DashPackage)
-  , "Description" :: NullOrUndefined (String)
-  , "HlsPackage" :: NullOrUndefined (HlsPackage)
-  , "Id" :: NullOrUndefined (String)
-  , "ManifestName" :: NullOrUndefined (String)
-  , "MssPackage" :: NullOrUndefined (MssPackage)
-  , "StartoverWindowSeconds" :: NullOrUndefined (Int)
-  , "TimeDelaySeconds" :: NullOrUndefined (Int)
-  , "Url" :: NullOrUndefined (String)
-  , "Whitelist" :: NullOrUndefined (ListOf__string)
+  { "Arn" :: Maybe (String)
+  , "ChannelId" :: Maybe (String)
+  , "DashPackage" :: Maybe (DashPackage)
+  , "Description" :: Maybe (String)
+  , "HlsPackage" :: Maybe (HlsPackage)
+  , "Id" :: Maybe (String)
+  , "ManifestName" :: Maybe (String)
+  , "MssPackage" :: Maybe (MssPackage)
+  , "StartoverWindowSeconds" :: Maybe (Int)
+  , "TimeDelaySeconds" :: Maybe (Int)
+  , "Url" :: Maybe (String)
+  , "Whitelist" :: Maybe (ListOf__string)
   }
 derive instance newtypeUpdateOriginEndpointResponse :: Newtype UpdateOriginEndpointResponse _
 derive instance repGenericUpdateOriginEndpointResponse :: Generic UpdateOriginEndpointResponse _
@@ -1157,10 +1156,10 @@ instance encodeUpdateOriginEndpointResponse :: Encode UpdateOriginEndpointRespon
 
 -- | Constructs UpdateOriginEndpointResponse from required parameters
 newUpdateOriginEndpointResponse :: UpdateOriginEndpointResponse
-newUpdateOriginEndpointResponse  = UpdateOriginEndpointResponse { "Arn": (NullOrUndefined Nothing), "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newUpdateOriginEndpointResponse  = UpdateOriginEndpointResponse { "Arn": Nothing, "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Url": Nothing, "Whitelist": Nothing }
 
 -- | Constructs UpdateOriginEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateOriginEndpointResponse' :: ( { "Arn" :: NullOrUndefined (String) , "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Url" :: NullOrUndefined (String) , "Whitelist" :: NullOrUndefined (ListOf__string) } -> {"Arn" :: NullOrUndefined (String) , "ChannelId" :: NullOrUndefined (String) , "DashPackage" :: NullOrUndefined (DashPackage) , "Description" :: NullOrUndefined (String) , "HlsPackage" :: NullOrUndefined (HlsPackage) , "Id" :: NullOrUndefined (String) , "ManifestName" :: NullOrUndefined (String) , "MssPackage" :: NullOrUndefined (MssPackage) , "StartoverWindowSeconds" :: NullOrUndefined (Int) , "TimeDelaySeconds" :: NullOrUndefined (Int) , "Url" :: NullOrUndefined (String) , "Whitelist" :: NullOrUndefined (ListOf__string) } ) -> UpdateOriginEndpointResponse
-newUpdateOriginEndpointResponse'  customize = (UpdateOriginEndpointResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "ChannelId": (NullOrUndefined Nothing), "DashPackage": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "HlsPackage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "ManifestName": (NullOrUndefined Nothing), "MssPackage": (NullOrUndefined Nothing), "StartoverWindowSeconds": (NullOrUndefined Nothing), "TimeDelaySeconds": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Whitelist": (NullOrUndefined Nothing) }
+newUpdateOriginEndpointResponse' :: ( { "Arn" :: Maybe (String) , "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Url" :: Maybe (String) , "Whitelist" :: Maybe (ListOf__string) } -> {"Arn" :: Maybe (String) , "ChannelId" :: Maybe (String) , "DashPackage" :: Maybe (DashPackage) , "Description" :: Maybe (String) , "HlsPackage" :: Maybe (HlsPackage) , "Id" :: Maybe (String) , "ManifestName" :: Maybe (String) , "MssPackage" :: Maybe (MssPackage) , "StartoverWindowSeconds" :: Maybe (Int) , "TimeDelaySeconds" :: Maybe (Int) , "Url" :: Maybe (String) , "Whitelist" :: Maybe (ListOf__string) } ) -> UpdateOriginEndpointResponse
+newUpdateOriginEndpointResponse'  customize = (UpdateOriginEndpointResponse <<< customize) { "Arn": Nothing, "ChannelId": Nothing, "DashPackage": Nothing, "Description": Nothing, "HlsPackage": Nothing, "Id": Nothing, "ManifestName": Nothing, "MssPackage": Nothing, "StartoverWindowSeconds": Nothing, "TimeDelaySeconds": Nothing, "Url": Nothing, "Whitelist": Nothing }
 
